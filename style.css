@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #FFE5F2;
+}
+
 header {
     display: flex;
     max-height: 112px;
@@ -148,20 +152,79 @@ main .usual #usual{
 
 main .usual #usual p {
     font-family: 'Mukta', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 20px;
+    color: #000000;
 }
 
-main .usual #usual #order{
+main .usual #usual #order {
     width: 178px;
     height: 44px;
+    border: 1px solid #FC2597;
+    background-color: #F4F4F469;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 main .usual .products {
+    display: block;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+main .usual .products ul {
+    list-style-type: none;
     display: flex;
-    justify-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+main .usual .products ul li {
+    width: 300px;
+    height: 510px;
+    margin: 0 20px;
+}
+
+main .usual .products ul li div {
+    height: 100%;
+    width: 100%;
+}
+
+main .usual .products ul li div img {
+    width: 300px;
+    height: 380px;
+    object-fit: cover;
+    border: 2px solid #FC2597;
+    border-radius: 60px;
+}
+
+main .usual .products ul li div #product_name {
+    height: 32px;
+    width: 300px;
+    font-size: 22px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 700;
+    color: #FC2597;
+}
+
+main .usual .products ul li div #product_price {
+    height: 76px;
+    width: 200px;
+    border: 3px #455A6450 solid;
+    border-radius: 64.5px;
+    background-color: #ffffff15;
+    margin: auto;
+    font-size: 18px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 700;
+    color: #FC2597;
+    text-align: center;
+    padding: 2px;
+    box-shadow: 2px 4px 2px 1px #00000050;
 }
 
 /* #teste1 {
