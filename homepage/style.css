@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mukta', sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body header {
+    background-color: #FFE5F2;
+    display: flex;
+    border-bottom: #EC4899 1px solid;
+    justify-content: space-around;
+    align-items: center;
+    color: #DB2777;
+    padding: 4px 12px 4px 12px;
+}
+
+body header .logoIcon {
+    max-width: 50px;
+    width: 20%;
+}
+
+body header .search {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+}
+
+body header .search h2 {
+    font-weight: 400;
+    font-size: 100%;
+    max-width: max-content;
+    width: 20%;
+    padding-right: 0.5em;
+    line-height: 24px;
+    text-align: center;
+}
+
+body header .search input {
+    height: 2.5em;
+    width: 40em;
+    min-width:max-content;
+    border: 1px solid #EC4899;
+    border-radius: 4px;
+    color: #DB2777;
+    font-weight: 400;
+    padding-left: 8px;
+}
+
+body header .search input:hover, input:focus {
+    border: 2px solid #EC4899;
+    outline: none;
+}
+
+body header .search button{
+    background: none;
+    border: none;
+    width: 10em;
+    min-width:3.5em;
+    max-width: min-content;
+    padding: 0.3em 0.3em 0 0.3em;
+}
+
+body header .search button:hover{
+    background-color: #FFF;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+
+body header .login {
+    min-width: 87px;
+    width: 10%;
+    text-align: center;
+    max-width: min-content;
+
+}
+
+body header .login a {
+    text-decoration: none;
+    color: #DB2777;
+    font-size: 0.9em;
+}
+
+body header .login a:hover {
+    color: #EC4899;
+    text-decoration: underline #EC4899;
+}
+
+body header .links {
+    width: 20%;
+}
+
+body header .links ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+@media (max-width:745px) {
+    body header .links ul {
+        max-height: min-content;
+        justify-content: center;
+    }
+
+    body header .links ul li {
+        height: 2em;
+        max-height: min-content;
+        max-width: min-content;
+    }
+}
+
+@media (max-width:605px) {
+    body header {
+        flex-direction: column;
+    }
+
+    body header .logoIcon {
+        height: 10%;
+    }
+
+    body header .search {
+        width: 75%;
+    }
+
+    body header .login {
+        width: 50%;
+        line-height: 1;
+    }
+
+}
+
+body header .links ul li {
+    min-width:2em;
+    width: 3em;
+}
+
+body header .links ul li:hover{
+    transform: scale(1.1)
+}
+
+
+
+body main {
+    background-color: #FDF2F8;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    align-items: center;
+}
+
+body main .head {
+    margin: 0 0 12px 0;
+    background-color: #EC4899;
+    width: 100%;
+}
+
+body main .head h1 {
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    font-weight: 700;
+}
+
+body main .products ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5em;
+}
+
+body main .products ul li article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -1.5em;
+}
+   
+
+body main .products ul li {
+    height: 22%;
+    width: 22%;
+    min-width: 250px;
+}
+
+
+body main .products ul li article div {
+    border-radius: 36px 0 0;
+    border: 3px solid #EC4899;
+    border-bottom: none;
+    display: flex;
+}
+
+body main .products ul li article div img {
+    width: 100%;
+    height: 100%;
+}
+
+
+body main .products ul li article span {
+    text-align: center;
+    height: 3em;
+    background: #EC4899;
+    border-radius: 0 0 36px 0;
+    padding-top: 0.25em;
+}
+
+body main .products ul li article span p {
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 1em;
+    color: #FFF;
+}
+
+body main .products ul li .addToCart {
+    height: 5em;
+    width: 12em;
+    padding: 1em;
+    text-align: center;
+    align-items: center;
+    background-color: #FDF2F8;
+    border-color: #EC4899;
+    border-radius: 12px;
+    display: flex;
+    position: relative;
+    bottom: 13rem;
+    left: 16%;
+}
+
+body main .products ul li .addToCart:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+body main .products ul li .addToCart h3 {
+    font-weight: 700;
+    color: #EC4899;
+    line-height: 1.35em;
+}
+
+body footer {
+    background: #EC4899;
+    min-height: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body footer .lastlinks ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2em;
+}
+
+body footer .lastlinks ul li a{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-decoration: none;
+}
+
+body footer .lastlinks ul li a img {
+    width: 2.5em;
+    margin-right: 0.2em;
+}
+
+body footer .lastlinks ul li p {
+    padding-top: 0.5em;
+    color: #FFf;
+    font-weight: 400;
+}
+
+@media (max-width:600px) {
+    body footer .lastlinks ul li p {
+        display: none;
+    }
+}
