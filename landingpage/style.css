@@ -7,7 +7,7 @@
 body {
     height: 100%;
     width: 100%;
-    background: url(../landingpage/assets/landingpage/Background.png) no-repeat bottom fixed;
+    background: url(../landingpage/assets/Background.png) no-repeat bottom fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
