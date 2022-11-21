@@ -400,7 +400,11 @@ body main .login .loginForm form fieldset label:nth-child(3) #remember{
 
 body main .login .loginBtn {
     height: 3em;
-    width: 30%;
+    width: 20%;
+    min-width: 80px;
+    max-width: 100px;
+    min-height: 45px;
+    max-height: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -409,4 +413,31 @@ body main .login .loginBtn {
 body main .login .loginBtn button {
     height: 100%;
     width: 100%;
+    font-family: 'Moul', cursive;
+    background-color: #EC4899;
+    color: #FFF;
+    font-size: 0.95em;
+    border-radius: 4px;
+    border: 1px solid #EC4899;
+}
+
+body main .login .loginBtn button:hover {
+    color: #EC4899;
+    background-color: #FFF;
+    border: 1px solid #EC4899;
+}
+
+body main .login .loginLinks {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body main .login .loginLinks a {
+    color: #DB2777;
+    text-decoration: none;
+}
+
+body main .login .loginLinks a:hover {
+    text-decoration: underline;
 }
