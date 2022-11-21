@@ -318,7 +318,9 @@ body main .login {
     width: 35%;
     align-items: center;
     border: 3px solid #EC4899;
+    border-radius: 2em;
     background-color: #FDF2F8;
+    min-width: 270px;
 }
 
 body main .login .logoIcon {
@@ -344,33 +346,67 @@ body main .login .loginForm form fieldset {
 }
 
 body main .login .loginForm form fieldset label {
-    height: 3.5em;
+    height: 4.5em;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
-body main .login .loginForm form fieldset label img {
+body main .login .loginForm form fieldset label div {
     background-color: #FFF;
+    border: 1px solid #DB2777;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+body main .login .loginForm form fieldset label div img {
+    padding: 0 12px;
 }
 
 body main .login .loginForm form fieldset label:nth-child(3) {
     height: 1em;
+    align-items: center;
+    gap: 0.5em;
 }
 
 body main .login .loginForm form fieldset label input {
     border: none;
     height: 60%;
+    width: 100%;
+    color: #DB2777;
 }
 
 body main .login .loginForm form fieldset label legend {
     color: #DB2777;
-    font-weight: 500;
+    font-weight: 600;
+    width: 100%;
 }
 
 body main .login .loginForm form fieldset label:nth-child(3) {
     display: flex;
+    flex-direction: row;
     width: fit-content;
+    height: fit-content;
 }
 
 body main .login .loginForm form fieldset label:nth-child(3):hover {
     cursor: pointer;
+}
+body main .login .loginForm form fieldset label:nth-child(3) #remember{
+    width: 2em;
+    height: 2em;
+}
+
+body main .login .loginBtn {
+    height: 3em;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+body main .login .loginBtn button {
+    height: 100%;
+    width: 100%;
 }
