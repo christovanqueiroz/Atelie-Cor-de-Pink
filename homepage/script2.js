@@ -5,3 +5,12 @@ addToCart.forEach(card => {
         (document.querySelector('.cartQty')).style.display = 'flex';
     })
 })
+
+const openModal = document.querySelector('.loginPopup')
+const modal = document.querySelector('.loginModal')
+
+openModal.addEventListener('click', function(){
+    modal.classList.add = "hidden"
+})
+
+console.log(modal)

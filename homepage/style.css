@@ -74,7 +74,7 @@ body header .search button:hover{
 }
 
 
-body header .login {
+body header .loginPopup {
     min-width: 87px;
     width: 10%;
     text-align: center;
@@ -82,13 +82,13 @@ body header .login {
 
 }
 
-body header .login a {
+body header .loginPopup a {
     text-decoration: none;
     color: #DB2777;
     font-size: 0.9em;
 }
 
-body header .login a:hover {
+body header .loginPopup a:hover {
     color: #EC4899;
     text-decoration: underline #EC4899;
 }
@@ -156,7 +156,7 @@ body header .links ul li .cartQty {
         width: 75%;
     }
 
-    body header .login {
+    body header .loginPopup {
         width: 50%;
         line-height: 1;
     }
@@ -312,7 +312,7 @@ body footer .lastlinks ul li p {
     }
 }
 
-body main .login {
+body main .loginModal {
     display: flex;
     flex-direction: column;
     width: 35%;
@@ -323,36 +323,36 @@ body main .login {
     min-width: 270px;
 }
 
-body main .login .logoIcon {
+body main .logoIcon {
     max-width: 50px;
     width: 20%;
 }
 
-body main .login div h2 {
+body main div h2 {
     font-weight: 700;
     font-size: 1.2em;
     color: #DB2777;
 }
 
-body main .login .loginForm {
+body main .loginForm {
     width: 90%;
 }
 
-body main .login .loginForm form fieldset {
+body main .loginForm form fieldset {
     border: none;
     display: flex;
     flex-direction: column;
     row-gap: 1em;
 }
 
-body main .login .loginForm form fieldset label {
+body main .loginForm form fieldset label {
     height: 4.5em;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
 
-body main .login .loginForm form fieldset label div {
+body main .loginForm form fieldset label div {
     background-color: #FFF;
     border: 1px solid #DB2777;
     display: flex;
@@ -360,45 +360,49 @@ body main .login .loginForm form fieldset label div {
     align-items: center;
 }
 
-body main .login .loginForm form fieldset label div img {
+body main .loginForm form fieldset label div img {
     padding: 0 12px;
 }
 
-body main .login .loginForm form fieldset label:nth-child(3) {
+body main .loginForm form fieldset label:nth-child(3) {
     height: 1em;
     align-items: center;
     gap: 0.5em;
 }
 
-body main .login .loginForm form fieldset label input {
+body main .loginForm form fieldset label input {
     border: none;
     height: 60%;
     width: 100%;
     color: #DB2777;
 }
 
-body main .login .loginForm form fieldset label legend {
+body main .loginForm form fieldset label legend {
     color: #DB2777;
     font-weight: 600;
     width: 100%;
 }
 
-body main .login .loginForm form fieldset label:nth-child(3) {
+body main .loginForm form fieldset .remember {
     display: flex;
     flex-direction: row;
     width: fit-content;
     height: fit-content;
+    gap: 0.6em;
 }
 
-body main .login .loginForm form fieldset label:nth-child(3):hover {
-    cursor: pointer;
-}
-body main .login .loginForm form fieldset label:nth-child(3) #remember{
+body main .loginForm form fieldset .remember input {
     width: 2em;
     height: 2em;
 }
 
-body main .login .loginBtn {
+body main .loginForm form fieldset .remember legend {
+    color: #DB2777;
+    font-weight: 600;
+    width: 100%;
+}
+
+body main .loginBtn {
     height: 3em;
     width: 20%;
     min-width: 80px;
@@ -410,7 +414,7 @@ body main .login .loginBtn {
     display: flex;
 }
 
-body main .login .loginBtn button {
+body main .loginBtn button {
     height: 100%;
     width: 100%;
     font-family: 'Moul', cursive;
@@ -421,23 +425,23 @@ body main .login .loginBtn button {
     border: 1px solid #EC4899;
 }
 
-body main .login .loginBtn button:hover {
+body main .loginBtn button:hover {
     color: #EC4899;
     background-color: #FFF;
     border: 1px solid #EC4899;
 }
 
-body main .login .loginLinks {
+body main .loginLinks {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-body main .login .loginLinks a {
+body main .loginLinks a {
     color: #DB2777;
     text-decoration: none;
 }
 
-body main .login .loginLinks a:hover {
+body main .loginLinks a:hover {
     text-decoration: underline;
 }
