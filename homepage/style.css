@@ -313,6 +313,20 @@ body footer .lastlinks ul li p {
 }
 
 body main .loginModal {
+    display: none;
+    flex-direction: column;
+    width: 35%;
+    align-items: center;
+    border: 3px solid #EC4899;
+    border-radius: 2em;
+    background-color: #FDF2F8;
+    min-width: 270px;
+    position: absolute;
+    bottom: 15%;
+}
+
+
+body main .loginModalVisible {
     display: flex;
     flex-direction: column;
     width: 35%;
@@ -321,11 +335,39 @@ body main .loginModal {
     border-radius: 2em;
     background-color: #FDF2F8;
     min-width: 270px;
+    position: absolute;
+    bottom: 15%;
 }
 
-body main .logoIcon {
+body main .loginHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+body main .loginHead .logoIcon {
     max-width: 50px;
-    width: 20%;
+    width: 100%;
+    margin-left: 46%;
+}
+
+body main .loginHead .btnCloseModal {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    border-radius: 100%;
+}
+
+body main .loginHead .btnCloseModal button {
+    border: none;
+    background-color: #FDF2F8;
+    border-radius: 100%;
+    color: #DB2777;
+    font-size: 120%;
+    height: 100%;
+    width: 100%;
 }
 
 body main div h2 {

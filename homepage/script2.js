@@ -10,7 +10,5 @@ const openModal = document.querySelector('.loginPopup')
 const modal = document.querySelector('.loginModal')
 
 openModal.addEventListener('click', function(){
-    modal.classList.add = "hidden"
+    modal.classList.replace("loginModal", "loginModalVisible")
 })
-
-console.log(modal)
