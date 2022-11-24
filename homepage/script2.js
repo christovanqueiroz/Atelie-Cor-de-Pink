@@ -14,11 +14,13 @@ const modalBackContent = document.querySelector('.fade');
 openModal.addEventListener('click', function(){
     modal.classList.replace("loginModal", "loginModalVisible");
     body.style.overflow = "hidden"
-    modalBackContent.style.display = 'flex';
+    modalBackContent.style.display = "flex";
 })
 
 const closeModal = document.querySelector('.btnCloseModal')
 
 closeModal.addEventListener('click', function(){
-    modal.classList.replace("loginModalVisible", "loginModal")
+    modal.classList.replace("loginModalVisible", "loginModal");
+    body.style.overflow = "visible"
+    modalBackContent.style.display = "none"
 })
