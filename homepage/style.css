@@ -312,17 +312,29 @@ body footer .lastlinks ul li p {
     }
 }
 
+body .fade {
+    height: 110vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    transform: translate(0%, -140%);
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 body main .loginModal {
     display: none;
     flex-direction: column;
     width: 35%;
+    min-width: 270px;
     align-items: center;
     border: 3px solid #EC4899;
     border-radius: 2em;
     background-color: #FDF2F8;
-    min-width: 270px;
     position: absolute;
+    top: 15%;
     bottom: 15%;
+    z-index: 10;
 }
 
 
@@ -330,13 +342,16 @@ body main .loginModalVisible {
     display: flex;
     flex-direction: column;
     width: 35%;
+    min-width: 270px;
+    height: fit-content;
     align-items: center;
     border: 3px solid #EC4899;
     border-radius: 2em;
     background-color: #FDF2F8;
-    min-width: 270px;
     position: absolute;
+    top: 15%;
     bottom: 15%;
+    z-index: 10;
 }
 
 body main .loginHead {
@@ -368,6 +383,11 @@ body main .loginHead .btnCloseModal button {
     font-size: 120%;
     height: 100%;
     width: 100%;
+}
+
+body main .loginHead .btnCloseModal button:hover {
+    cursor: pointer;
+    background-color: #FFF;
 }
 
 body main div h2 {
