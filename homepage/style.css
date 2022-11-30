@@ -264,6 +264,7 @@ body main .products ul li .addToCart {
 
 body main .products ul li .addToCart:hover {
     transform: scale(1.05) translate(20%, -265%);
+    transition: 0.5s;
     cursor: pointer;
 }
 
