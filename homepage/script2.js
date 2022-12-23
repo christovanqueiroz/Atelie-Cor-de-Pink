@@ -1,10 +1,14 @@
 const addToCart = document.querySelectorAll('.addToCart');
-const openModal = document.querySelector('.loginPopup');
-const modal = document.querySelector('.loginModal');
-const body = document.querySelector('body');
-const modalBackContent = document.querySelector('.fade');
-const closeModal = document.querySelector('.btnCloseModal');
 let cartQty = document.querySelector('.cartQty p b');
+
+const openLoginModal = document.querySelector('.loginPopup');
+const closeLoginModal = document.querySelector('.btnCloseLoginModal');
+const loginModal = document.querySelector('.loginModal');
+
+
+
+const modalFadeBackContent = document.querySelector('.fade');
+const body = document.querySelector('body');
 
 addToCart.forEach(card => {
     card.addEventListener('click', () => {
@@ -16,16 +20,26 @@ function sumFunction() {
     cartQty.innerHTML = parseInt(cartQty.innerHTML) + 1
 }
 
-console.log(cartQty.innerHTML)
-
-openModal.addEventListener('click', function(){
-    modal.classList.replace("loginModal", "loginModalVisible");
-    body.style.overflow = "hidden"
-    modalBackContent.style.display = "flex";
+openLoginModal.addEventListener('click', function(){
+    loginModal.classList.replace("loginModal", "loginModalVisible");
+    body.style.overflow = "hidden";
+    modalFadeBackContent.style.display = "flex";
 })
 
-closeModal.addEventListener('click', function(){
-    modal.classList.replace("loginModalVisible", "loginModal");
-    body.style.overflow = "visible"
-    modalBackContent.style.display = "none"
+closeLoginModal.addEventListener('click', function(){
+    loginModal.classList.replace("loginModalVisible", "loginModal");
+    body.style.overflow = "visible";
+    modalFadeBackContent.style.display = "none";
+})
+
+const openSizeChartModal = document.querySelector('.sizeChartPopup');
+const closeSizeChartModal = document.querySelector('.btnCloseSizeChartModal');
+const sizeChartModal = document.querySelector('.sizeChartModal');
+
+openSizeChartModal.addEventListener('click', function() {
+    sizeChartModal.classList.replace("sizeChartModal", "sizeChartModalVisible");
+})
+
+closeSizeChartModal.addEventListener('click', function(){
+    sizeChartModal.classList.replace("sizeChartModalVisible", "sizeChartModal");
 })

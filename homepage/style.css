@@ -181,6 +181,10 @@ body main .head {
     background-color: #EC4899;
     width: 100%;
     z-index: 1;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body main .head h1 {
@@ -203,7 +207,7 @@ body main .products ul {
 body main .products ul li {
     height: 22%;
     width: 22%;
-    min-width: 200px;
+    min-width: 278px;
 }
 
 body main .products ul li article {
@@ -253,11 +257,11 @@ body main .products ul li .addToCart {
     border-radius: 12px;
     display: flex;
     position: absolute;
-    transform: translate(20%, -280%);
+    transform: translate(25%, -280%);
 }
 
 body main .products ul li .addToCart:hover {
-    transform: scale(1.05) translate(20%, -265%);
+    transform: scale(1.05) translate(25%, -270%);
     transition: 0.5s;
     cursor: pointer;
 }
@@ -306,7 +310,7 @@ body footer .lastlinks ul li a img {
 
 body footer .lastlinks ul li p {
     padding-top: 0.5em;
-    color: #FFf;
+    color: #FFF;
     font-weight: 400;
 }
 
@@ -330,19 +334,10 @@ body .fade {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+
+
 body main .loginModal {
     display: none;
-    flex-direction: column;
-    width: 35%;
-    min-width: 270px;
-    align-items: center;
-    border: 3px solid #EC4899;
-    border-radius: 2em;
-    background-color: #FDF2F8;
-    position: absolute;
-    top: 15%;
-    bottom: 15%;
-    z-index: 10;
 }
 
 
@@ -359,7 +354,7 @@ body main .loginModalVisible {
     position: absolute;
     top: 15%;
     bottom: 15%;
-    z-index: 10;
+    z-index: 11;
 }
 
 body main .loginHead {
@@ -376,14 +371,15 @@ body main .loginHead .logoIcon {
     margin-left: 46%;
 }
 
-body main .loginHead .btnCloseModal {
+body main .loginHead .btnCloseLoginModal {
     width: 3em;
     height: 3em;
     display: flex;
     border-radius: 100%;
+    margin: 0.5em 0.5em 0 0;
 }
 
-body main .loginHead .btnCloseModal button {
+body main .loginHead .btnCloseLoginModal button {
     border: none;
     background-color: #FDF2F8;
     border-radius: 100%;
@@ -393,9 +389,10 @@ body main .loginHead .btnCloseModal button {
     width: 100%;
 }
 
-body main .loginHead .btnCloseModal button:hover {
+body main .loginHead .btnCloseLoginModal button:hover {
+    border-radius: 100%;
     cursor: pointer;
-    background-color: #FFF;
+    transform: scale(1.2);
 }
 
 body main div h2 {
@@ -517,43 +514,45 @@ body main .loginLinks a:hover {
 }
 
 body main .sizeChartModal {
+    display: none;
+}
+
+body main .sizeChartModalVisible {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    position: fixed;
+    width: 40%;
     min-width: 270px;
-    height: fit-content;
+    height: 70%;
     align-items: center;
     border: 3px solid #EC4899;
-    border-radius: 2em;
+    border-right: none;
+    border-radius: 2em 0 0 2em;
     background-color: #FDF2F8;
-    position: absolute;
-    top: 15%;
-    bottom: 15%;
+    top: 12.7%;
+    right: 0em;
     z-index: 10;
 }
 
 body main .sizeChartHead {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     width: 100%;
     height: fit-content;
+    column-gap: 5em;
+    margin-top: 0.5em;
 }
 
-body main .sizeChartHead .logoIcon {
-    max-width: 50px;
-    width: 100%;
-    margin-left: 46%;
-}
-
-body main .sizeChartHead .btnCloseModal {
+body main .sizeChartHead .btnCloseSizeChartModal {
     width: 3em;
     height: 3em;
     display: flex;
     border-radius: 100%;
+    margin-left: 0.3em;
 }
 
-body main .sizeChartHead .btnCloseModal button {
+body main .sizeChartHead .btnCloseSizeChartModal button {
     border: none;
     background-color: #FDF2F8;
     border-radius: 100%;
@@ -563,14 +562,59 @@ body main .sizeChartHead .btnCloseModal button {
     width: 100%;
 }
 
-body main .sizeChartHead .btnCloseModal button:hover {
+body main .sizeChartHead .btnCloseSizeChartModal button:hover {
+    border-radius: 100%;
     cursor: pointer;
-    background-color: #FFF;
+    transform: scale(1.2);
 }
 
-body main div h2 {
+body main .sizeChartModalVisible h2 {
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    color: #EC4899;
+    font-family: 'Moul', cursive;
+}
+
+body main .sizeChartModalVisible h1 {
+    font-family: 'Send Flowers', cursive;
+    font-weight: 600;
+}
+
+body main .title {
+    display: flex;
+    justify-content: center;
+}
+
+body main .topAndBrallet,
+body main .underwear {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     color: #EC4899;
 }
 
+body main .topAndBrallet {
+    margin-bottom: 1.5em;
+}
+
+body main .sizes {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    gap: 2em;
+}
+
+body main .sizes span {
+    font-weight: 700;
+}
+
+body main .sizes ul {
+    list-style: none;
+    font-size: 1.25em;
+}
+
+body main .sizes > div {
+    display: flex;
+    flex-direction: column;
+}
