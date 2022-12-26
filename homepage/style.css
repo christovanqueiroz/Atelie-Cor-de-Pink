@@ -59,7 +59,7 @@ body header .links nav {
 body header .links nav ul {
     display: flex;
     list-style: none;
-    gap: 4.5em;
+    gap: 5em;
 }
 
 body header .links nav ul li {
@@ -77,6 +77,7 @@ body header .links nav ul li a {
     line-height: 1.125em;
     align-items: center;
     text-align: center;
+    gap: 0.35em;
 }
 
 body header .links nav ul li:nth-child(2) a span {
@@ -174,6 +175,53 @@ body main .products ul li article div img {
     max-height: 300px;
 }
 
+.sliders {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    height: auto;
+    top: 50%;
+    position: absolute;
+}
+
+.sliders-second {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    height: auto;
+    bottom: -10%;
+    position: absolute;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: auto;
+    margin-top: -22px;
+    padding: 0.3em 1em 0.3em 0.3em;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    border-radius: 3px 0 0 3px;
+    left: 0.5em;
+}
+
+.next {
+    border-radius: 3px 0 0 3px;
+    left: 14.175em;
+}
+  
+.prev:hover, .next:hover {
+    background-color: rgba(255,255,255,0.25);
+}
 
 body main .products ul li article span {
     text-align: center;

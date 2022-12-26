@@ -5,7 +5,9 @@ const openLoginModal = document.querySelector('.loginPopup');
 const closeLoginModal = document.querySelector('.btnCloseLoginModal');
 const loginModal = document.querySelector('.loginModal');
 
-
+const openSizeChartModal = document.querySelector('.sizeChartPopup');
+const closeSizeChartModal = document.querySelector('.btnCloseSizeChartModal');
+const sizeChartModal = document.querySelector('.sizeChartModal');
 
 const modalFadeBackContent = document.querySelector('.fade');
 const body = document.querySelector('body');
@@ -24,6 +26,7 @@ openLoginModal.addEventListener('click', function(){
     loginModal.classList.replace("loginModal", "loginModalVisible");
     body.style.overflow = "hidden";
     modalFadeBackContent.style.display = "flex";
+    sizeChartModal.classList.replace("sizeChartModalVisible", "sizeChartModal")
 })
 
 closeLoginModal.addEventListener('click', function(){
@@ -31,10 +34,6 @@ closeLoginModal.addEventListener('click', function(){
     body.style.overflow = "visible";
     modalFadeBackContent.style.display = "none";
 })
-
-const openSizeChartModal = document.querySelector('.sizeChartPopup');
-const closeSizeChartModal = document.querySelector('.btnCloseSizeChartModal');
-const sizeChartModal = document.querySelector('.sizeChartModal');
 
 openSizeChartModal.addEventListener('click', function() {
     sizeChartModal.classList.replace("sizeChartModal", "sizeChartModalVisible");
