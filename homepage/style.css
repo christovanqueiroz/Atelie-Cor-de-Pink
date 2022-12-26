@@ -17,7 +17,7 @@ body header {
     justify-content: space-evenly;
     align-items: center;
     color: #EC4899;
-    padding: 4px 12px 4px 12px;
+    padding: 0.5em 3em 0.5em 3em;
     min-height: 5em;
 }
 
@@ -33,7 +33,7 @@ body header .links {
 }
 
 body header .loginPopup {
-    min-width: 18em;
+    min-width: 15em;
     text-align: center;
     max-width: min-content;
     display: flex;
@@ -59,18 +59,37 @@ body header .links nav {
 body header .links nav ul {
     display: flex;
     list-style: none;
-    gap: 1.2em;
+    gap: 4.5em;
 }
 
 body header .links nav ul li {
     min-width: 2em;
     max-height: 3em;
     width: 3em;
+    display: flex;
+}
+
+body header .links nav ul li a {
+    display: flex;
+    text-decoration: none;
+    color: #EC4899;
+    font-weight: 700;
+    line-height: 1.125em;
+    align-items: center;
+    text-align: center;
+}
+
+body header .links nav ul li:nth-child(2) a span {
+    padding-top: 0.3em;
 }
 
 body header .links nav ul li img:hover{
     transform: scale(1.1);
     transition: .75s;
+}
+
+body header .links nav ul li a span:hover {
+    text-decoration: underline;
 }
 
 body header .links nav ul li .cartQty {
@@ -89,37 +108,6 @@ body header .links nav ul li .cartQty {
     font-weight: 400;
     font-size: 0.9em;
     transition: none;
-}
-
-@media (max-width:745px) {
-    body header .links nav ul {
-        max-height: min-content;
-        justify-content: center;
-    }
-    
-    body header .loginPopup {
-        min-width: 12em;
-    }
-}
-
-@media (max-width:605px) {
-    body header .links nav ul li {
-        height: 2.5em;
-        width: 2.5em;
-    }
-
-    body header .links nav ul li .cartQty {
-        top: -68%;
-        margin-left: 0.75em;
-    }
-
-    body main .products ul .product {
-        min-width: 15em;
-    }
-
-    body footer .lastlinks ul li p {
-        display: none;
-    }
 }
 
 body main {
@@ -226,39 +214,6 @@ body main .products ul li .addToCart h3 {
     line-height: 1.35em;
     color: #FFF;
     border-radius: 12px;
-}
-
-@media (max-width:480px) {
-    body main .products ul li {
-        min-width: 150px;
-    }
-
-    body main .products ul li .addToCart {
-        height: 3em;
-        width: 8em;
-        padding: 0.7em;
-        text-align: center;
-        align-items: center;
-        background-color: #FDF2F8;
-        border-color: #EC4899;
-        border-radius: 12px;
-        display: flex;
-        position: absolute;
-        transform: translate(7.5%, -325%);
-    }
-    
-    body main .products ul li .addToCart:hover {
-        transform: scale(1.1) translate(7.5%, -295%);
-        transition: 0.5s;
-        cursor: pointer;
-    }
-    
-    body main .products ul li .addToCart h3 {
-        font-weight: 700;
-        color: #EC4899;
-        line-height: 1.35em;
-        font-size: 0.8em;
-    }
 }
 
 body footer {
@@ -588,4 +543,114 @@ body main .sizes ul {
 body main .sizes > div {
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width:1008px) {
+    body header {
+        justify-content: center;
+    }
+
+    body header .links {
+        justify-content: space-evenly;
+        width: 60%;
+    }
+
+    body header .links nav ul li a span {
+        display: none;
+    }
+
+    body header .links nav ul {
+        gap: 1.5em;
+    }
+}
+
+@media (max-width:900px) {
+    body header .loginPopup {
+        min-width: 10em;
+    }
+
+    body header .links nav ul {
+        gap: 1em;
+    }
+}
+
+@media (max-width:745px) {
+    body header {
+        justify-content: space-around;
+    }
+
+    body header .links {
+        justify-content: space-between;
+    }
+
+    body header .links nav ul {
+        max-height: min-content;
+        justify-content: center;
+    }
+    
+    body header .loginPopup {
+        min-width: 8em;
+    }
+
+    body header .loginPopup a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width:650px) {
+    body header .links {
+        justify-content: center;
+    }
+
+    body header .links nav ul li .cartQty {
+        top: -68%;
+        margin-left: 0.75em;
+    }
+
+    body main .products ul {
+        justify-content: center;
+        column-gap: 3em;
+    }
+
+    body main .products ul .product {
+        min-width: 280px;
+        min-height: 100%;
+    }
+
+    body footer .lastlinks ul li p {
+        display: none;
+    }
+}
+
+@media (max-width:480px) {
+    body main .products ul li {
+        width: 15%;
+    }
+
+    body main .products ul li .addToCart {
+        height: 3em;
+        width: 8em;
+        padding: 0.7em;
+        text-align: center;
+        align-items: center;
+        background-color: #FDF2F8;
+        border-color: #EC4899;
+        border-radius: 12px;
+        display: flex;
+        position: absolute;
+        transform: translate(7.5%, -325%);
+    }
+    
+    body main .products ul li .addToCart:hover {
+        transform: scale(1.1) translate(7.5%, -295%);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    
+    body main .products ul li .addToCart h3 {
+        font-weight: 700;
+        color: #EC4899;
+        line-height: 1.35em;
+        font-size: 0.8em;
+    }
 }
