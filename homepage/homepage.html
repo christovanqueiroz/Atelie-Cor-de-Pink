@@ -17,7 +17,6 @@
     </style>
 
     <script src="./script.js" defer></script>
-    <script src="./script2.js" defer></script>
 </head>
 
 <body>
@@ -29,17 +28,9 @@
         </div>
 
         <div class="links">
-            <div class="loginPopup">
-                <a href="#">
-                    <p>
-                        Faça <strong>Login</strong> ou crie seu <strong>Cadastro</strong>
-                    </p>
-                </a>
-            </div>
-
             <nav>
                 <ul>
-                    <li>
+                    <li class="loginPopup">
                         <a href="#">
                             <img style="width: 100%;" src="./assets/header/UserIcon.svg" alt="Ícone para acessar o seu perfil">
                             <span>Meu Perfil</span>
@@ -54,9 +45,9 @@
                         </a>
     
                         <div class="cartQty">
-                            <p>
-                                <b>0</b>
-                            </p>
+                            <span>
+                                0
+                            </span>
                         </div>
                     </li>
     
@@ -80,7 +71,12 @@
             <ul>
                 <li class="product">
                     <article>
-                        <div>
+                        <div class="sliders">
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>    
+                        </div>
+
+                        <div class="product-image">
                             <img class="blur" src="./assets/main/1.jpg" alt="Imagem de produto">
                         </div>
 
@@ -89,11 +85,6 @@
                         </span>
                     </article>
 
-                    <div class="sliders">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
-                    </div>
-
                     <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
                         <h3>ADICIONAR AO CARRINHO</h3>
                     </div>
@@ -101,7 +92,12 @@
 
                 <li class="product">
                     <article>
-                        <div>
+                        <div class="sliders">
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>    
+                        </div>   
+
+                        <div class="product-image">
                             <img class="blur" src="./assets/main/2.jpg" alt="Imagem de produto">
                         </div>
 
@@ -110,11 +106,6 @@
                         </span>
                     </article>
 
-                    <div class="sliders">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
-                    </div>
-
                     <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
                         <h3>ADICIONAR AO CARRINHO</h3>
                     </div>
@@ -122,7 +113,12 @@
 
                 <li class="product">
                     <article>
-                        <div>
+                        <div class="sliders">
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>    
+                        </div>    
+
+                        <div class="product-image">
                             <img class="blur" src="./assets/main/3.jpg" alt="Imagem de produto">
                         </div>
 
@@ -131,11 +127,6 @@
                         </span>
                     </article>
 
-                    <div class="sliders">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
-                    </div>
-
                     <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
                         <h3>ADICIONAR AO CARRINHO</h3>
                     </div>
@@ -143,19 +134,19 @@
 
                 <li class="product">
                     <article>
-                        <div>
+                        <div class="sliders">
+                            <a class="prev">&#10094;</a>
+                            <a class="next" onclick=>&#10095;</a>    
+                        </div>
+    
+                        <div class="product-image">
                             <img class="blur" src="./assets/main/4.jpg" alt="Imagem de produto">
                         </div>
 
                         <span>
                             <p>A partir de <br> R$ 100,00</p>
-                        </span>                    
+                        </span>
                     </article>
-
-                    <div class="sliders-second">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
-                    </div>
 
                     <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
                         <h3>ADICIONAR AO CARRINHO</h3>
@@ -164,7 +155,12 @@
 
                 <li class="product">
                     <article>
-                        <div>
+                        <div class="sliders">
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>    
+                        </div>
+    
+                        <div class="product-image">
                             <img class="blur" src="./assets/main/5.jpg" alt="Imagem de produto">
                         </div>
 
@@ -173,11 +169,6 @@
                         </span>
                     </article>
 
-                    <div class="sliders-second">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
-                    </div>
-
                     <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
                         <h3>ADICIONAR AO CARRINHO</h3>
                     </div>
@@ -185,7 +176,12 @@
 
                 <li class="product">
                     <article>
-                        <div>
+                        <div class="sliders">
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>    
+                        </div>
+    
+                        <div class="product-image">
                             <img class="blur" src="./assets/main/6.jpg" alt="Imagem de produto">
                         </div>
 
@@ -193,11 +189,6 @@
                             <p>A partir de <br> R$ 65,00</p>
                         </span>
                     </article>
-
-                    <div class="sliders-second">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
-                    </div>
                     
                     <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
                         <h3>ADICIONAR AO CARRINHO</h3>

@@ -14,7 +14,7 @@ body header {
     background-color: #FFE5F2;
     display: flex;
     border-bottom: #EC4899 1px solid;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     color: #EC4899;
     padding: 0.5em 3em 0.5em 3em;
@@ -23,32 +23,14 @@ body header {
 
 body header .logoIcon {
     max-width: 50px;
-    width: 30%;
+    min-width: 20px;
+    width: 50%;
 }
 
 body header .links {
     display: flex;
-    justify-content: space-evenly;
-    width: 70%;
-}
-
-body header .loginPopup {
-    min-width: 15em;
-    text-align: center;
-    max-width: min-content;
-    display: flex;
-    align-items: center;
-}
-
-body header .loginPopup a {
-    text-decoration: none;
-    color: #EC4899;
-    font-size: 1.125em;
-}
-
-body header .loginPopup a:hover {
-    color: #EC4899;
-    text-decoration: underline #EC4899;
+    justify-content: flex-end;
+    width: 50%;
 }
 
 body header .links nav {
@@ -96,19 +78,26 @@ body header .links nav ul li a span:hover {
 body header .links nav ul li .cartQty {
     display: none;
     position: relative;
-    top: -50%;
-    width: 60%;
+    top: 65%;
+    right: 60%;
+    width: 100%;
     height: 60%;
+    max-width: 26px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin-left: 1.2em;
+    padding: 0.5em;
     border: 3px dashed #EC4899;
     border-radius: 100%;
-    background: #FFF;
-    font-weight: 400;
-    font-size: 0.9em;
+    background: #EC4899;
     transition: none;
+    line-height: 0;
+}
+
+body header .links nav ul li .cartQty span {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 0.75em;
 }
 
 body main {
@@ -158,7 +147,7 @@ body main .products ul li article {
     flex-direction: column;
 }
 
-body main .products ul li article div {
+body main .products ul li article .product-image {
     border-radius: 36px 0 0;
     border: 3px solid #EC4899;
     border-bottom: none;
@@ -166,7 +155,7 @@ body main .products ul li article div {
     width: 100%;
 }
 
-body main .products ul li article div img {
+body main .products ul li article .product-image img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -176,31 +165,19 @@ body main .products ul li article div img {
 }
 
 .sliders {
-    display: flex;
-    justify-content: space-evenly;
-    width: auto;
-    height: auto;
-    top: 50%;
-    position: absolute;
-}
-
-.sliders-second {
-    display: flex;
-    justify-content: space-evenly;
-    width: auto;
-    height: auto;
-    bottom: -10%;
-    position: absolute;
+    display: block;
+    visibility: hidden;
+    z-index: 1;
+    top: 9em;
+    position: relative;
 }
 
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: 100%;
     height: auto;
-    margin-top: -22px;
-    padding: 0.3em 1em 0.3em 0.3em;
+    padding: 0.3em 0.75em 0.3em 0.75em;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -211,12 +188,12 @@ body main .products ul li article div img {
 
 .prev {
     border-radius: 3px 0 0 3px;
-    left: 0.5em;
+    left: .25em;
 }
 
 .next {
     border-radius: 3px 0 0 3px;
-    left: 14.175em;
+    left: 13.7em;
 }
   
 .prev:hover, .next:hover {
@@ -244,11 +221,11 @@ body main .products ul li .addToCart {
     padding: 1em;
     text-align: center;
     align-items: center;
-    border: 2px dashed #EC4899;
+    border: 2px dashed #EC489950;
     border-radius: 12px;
     display: flex;
     position: absolute;
-    transform: translate(22.5%, -280%);
+    transform: translate(25%, -280%);
 }
 
 body main .products ul li .addToCart:hover {
@@ -260,7 +237,7 @@ body main .products ul li .addToCart:hover {
 body main .products ul li .addToCart h3 {
     font-weight: 700;
     line-height: 1.35em;
-    color: #FFF;
+    color: #FDF2F8;
     border-radius: 12px;
 }
 
@@ -595,26 +572,19 @@ body main .sizes > div {
 
 @media (max-width:1008px) {
     body header {
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     body header .links {
-        justify-content: space-evenly;
-        width: 60%;
+        justify-content: flex-end;
+    }
+
+    body header .links li a img {
+        min-width: 48px
     }
 
     body header .links nav ul li a span {
         display: none;
-    }
-
-    body header .links nav ul {
-        gap: 1.5em;
-    }
-}
-
-@media (max-width:900px) {
-    body header .loginPopup {
-        min-width: 10em;
     }
 
     body header .links nav ul {
@@ -623,41 +593,15 @@ body main .sizes > div {
 }
 
 @media (max-width:745px) {
-    body header {
-        justify-content: space-around;
-    }
-
-    body header .links {
-        justify-content: space-between;
-    }
-
     body header .links nav ul {
         max-height: min-content;
         justify-content: center;
     }
-    
-    body header .loginPopup {
-        min-width: 8em;
-    }
-
-    body header .loginPopup a {
-        font-size: 1em;
-    }
 }
 
 @media (max-width:650px) {
-    body header .links {
-        justify-content: center;
-    }
-
-    body header .links nav ul li .cartQty {
-        top: -68%;
-        margin-left: 0.75em;
-    }
-
     body main .products ul {
         justify-content: center;
-        column-gap: 3em;
     }
 
     body main .products ul .product {
@@ -670,35 +614,14 @@ body main .sizes > div {
     }
 }
 
-@media (max-width:480px) {
-    body main .products ul li {
-        width: 15%;
+@media (max-width:500px) {
+    body header {
+        justify-content: space-between;
+        padding: 0 1em;
     }
 
-    body main .products ul li .addToCart {
-        height: 3em;
-        width: 8em;
-        padding: 0.7em;
-        text-align: center;
-        align-items: center;
-        background-color: #FDF2F8;
-        border-color: #EC4899;
-        border-radius: 12px;
-        display: flex;
-        position: absolute;
-        transform: translate(7.5%, -325%);
-    }
-    
-    body main .products ul li .addToCart:hover {
-        transform: scale(1.1) translate(7.5%, -295%);
-        transition: 0.5s;
-        cursor: pointer;
-    }
-    
-    body main .products ul li .addToCart h3 {
-        font-weight: 700;
-        color: #EC4899;
-        line-height: 1.35em;
-        font-size: 0.8em;
+    body header .links nav ul li {
+        min-width: 30px;
+        width: 2.5em;
     }
 }
