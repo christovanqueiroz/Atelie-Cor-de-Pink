@@ -14,7 +14,7 @@ body header {
     background-color: #FFE5F2;
     display: flex;
     border-bottom: #EC4899 1px solid;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     color: #EC4899;
     padding: 0.5em 3em 0.5em 3em;
@@ -24,13 +24,13 @@ body header {
 body header .logoIcon {
     max-width: 50px;
     min-width: 20px;
-    width: 50%;
+    width: 45%;
 }
 
 body header .links {
     display: flex;
-    justify-content: flex-end;
-    width: 50%;
+    justify-content: flex-start;
+    width: 55%;
 }
 
 body header .links nav {
@@ -221,7 +221,7 @@ body main .products ul li .addToCart {
     padding: 1em;
     text-align: center;
     align-items: center;
-    border: 2px dashed #EC489950;
+    border: 2px dashed #FDF2F8;
     border-radius: 12px;
     display: flex;
     position: absolute;
@@ -229,9 +229,10 @@ body main .products ul li .addToCart {
 }
 
 body main .products ul li .addToCart:hover {
-    transition: .75s;
+    transition: .5s;
     cursor: pointer;
     background-color: #EC4899;
+    border: none;
 }
 
 body main .products ul li .addToCart h3 {
@@ -471,14 +472,13 @@ body main .sizeChartModal {
 body main .sizeChartModalVisible {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     width: 40%;
     min-width: 270px;
     height: 70%;
     align-items: center;
     border: 3px solid #EC4899;
-    border-right: none;
-    border-radius: 2em 0 0 2em;
+    border-radius: 2em;
     background-color: #FDF2F8;
     top: 12.7%;
     right: 0em;

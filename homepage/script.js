@@ -60,3 +60,34 @@ products.forEach(product => {
         (product.querySelector('.sliders').style.visibility = 'hidden');
     })
 })
+
+let mousePosition;
+let offset = [0,0];
+let isDown = false;
+const divHead = document.querySelector('.sizeChartHead');
+
+divHead.addEventListener('mousedown', function(e) {
+    isDown = true;
+    offset = [
+        sizeChartModal.offsetLeft - e.clientX,
+        sizeChartModal.offsetTop - e.clientY
+    ];
+}, true);
+
+document.addEventListener('mouseup', function() {
+    isDown = false;
+}, true);
+
+document.addEventListener('mousemove', function(event) {
+    event.preventDefault();
+    if (isDown) {
+        mousePosition = {
+    
+            x : event.clientX,
+            y : event.clientY
+    
+        };
+        sizeChartModal.style.left = (mousePosition.x + offset[0]) + 'px';
+        sizeChartModal.style.top  = (mousePosition.y + offset[1]) + 'px';
+    }
+}, true);
