@@ -14,23 +14,22 @@ body header {
     background-color: #FFE5F2;
     display: flex;
     border-bottom: #EC4899 1px solid;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     color: #EC4899;
     padding: 0.5em 3em 0.5em 3em;
     min-height: 5em;
+    gap: 10em;
 }
 
 body header .logoIcon {
     max-width: 50px;
     min-width: 20px;
-    width: 45%;
 }
 
 body header .links {
     display: flex;
     justify-content: flex-start;
-    width: 55%;
 }
 
 body header .links nav {
@@ -104,7 +103,6 @@ body main {
     background-color: #FDF2F8;
     display: flex;
     flex-direction: column;
-    padding-bottom: 1em;
     align-items: center;
 }
 
@@ -132,14 +130,16 @@ body main .products ul {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    column-gap: 5em;
+    column-gap: 2em;
     row-gap: 2em;
+    margin-bottom: 1em;
 }
 
 body main .products ul li {
-    width: 22%;
-    min-width: 278px;
-    height: 351px;
+    width: 20%;
+    min-width: 240px;
+    max-width: 262px;
+    height: 100%;
 }
 
 body main .products ul li article {
@@ -148,7 +148,6 @@ body main .products ul li article {
 }
 
 body main .products ul li article .product-image {
-    border-radius: 36px 0 0;
     border: 3px solid #EC4899;
     border-bottom: none;
     display: flex;
@@ -159,48 +158,24 @@ body main .products ul li article .product-image img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 32px 0 0;
     min-height: 300px;
     max-height: 300px;
 }
 
-.sliders {
-    display: block;
-    visibility: hidden;
-    z-index: 1;
-    top: 9em;
-    position: relative;
+body main .products ul li article span:first-child {
+    text-align: center;
+    height: 1.85em;
+    background: #fff;
+    border-radius: 36px 0 0 0;
+    text-transform: uppercase;
+    color: #EC4899;
+    border: 3px solid #EC4899;
+    border-bottom: none;
+    font-size: 1.25em;
+    font-weight: 500;
 }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    height: auto;
-    padding: 0.3em 0.75em 0.3em 0.75em;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.prev {
-    border-radius: 3px 0 0 3px;
-    left: .25em;
-}
-
-.next {
-    border-radius: 3px 0 0 3px;
-    left: 13.7em;
-}
-  
-.prev:hover, .next:hover {
-    background-color: rgba(255,255,255,0.25);
-}
-
-body main .products ul li article span {
+body main .products ul li article span:last-child {
     text-align: center;
     height: 3em;
     background: #EC4899;
@@ -208,7 +183,7 @@ body main .products ul li article span {
     padding-top: 0.25em;
 }
 
-body main .products ul li article span p {
+body main .products ul li article span:last-child p {
     font-weight: 600;
     font-size: 1.2em;
     line-height: 1em;
@@ -225,7 +200,8 @@ body main .products ul li .addToCart {
     border-radius: 12px;
     display: flex;
     position: absolute;
-    transform: translate(25%, -280%);
+    transform: translate(17.5%, -300%);
+    background-color: #FCE7F370;
 }
 
 body main .products ul li .addToCart:hover {
@@ -238,7 +214,7 @@ body main .products ul li .addToCart:hover {
 body main .products ul li .addToCart h3 {
     font-weight: 700;
     line-height: 1.35em;
-    color: #FDF2F8;
+    color: #fff;
     border-radius: 12px;
 }
 
@@ -394,6 +370,7 @@ body main .loginForm form fieldset label input {
     height: 60%;
     width: 100%;
     color: #EC4899;
+    outline: none;
 }
 
 body main .loginForm form fieldset label legend {
@@ -570,6 +547,12 @@ body main .sizes > div {
     flex-direction: column;
 }
 
+@media (max-width:1200px) {
+    body main .products ul .product .addToCart {
+        transform: translate(12.5%, -300%);
+    }
+}
+
 @media (max-width:1008px) {
     body header {
         justify-content: space-evenly;
@@ -602,11 +585,6 @@ body main .sizes > div {
 @media (max-width:650px) {
     body main .products ul {
         justify-content: center;
-    }
-
-    body main .products ul .product {
-        min-width: 280px;
-        min-height: 100%;
     }
 
     body footer .lastlinks ul li p {

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja | Atêlie Cor de Pink</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./assets/header/HeaderIcon2.png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+    </style>
+
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logoIcon">
+            <a href="./homepage.html">
+                <img style="width: 100%;" src="./assets/header/HeaderIcon2.png" alt="Ícone do Atelie Cor de Pink">
+            </a>
+        </div>
+
+        <div class="links">
+            <nav>
+                <ul>
+                    <li class="loginPopup">
+                        <a href="#">
+                            <img style="width: 100%;" src="./assets/header/UserIcon.svg" alt="Ícone para acessar o seu perfil">
+                            <span>Meu Perfil</span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#">
+                            <img style="width: 100%;" src="./assets/header/BagIcon.svg" alt="Ícone para acessar o seu carrinho">
+                            <span>Minha Sacola</span>
+
+                        </a>
+    
+                        <div class="cartQty">
+                            <span>
+                                0
+                            </span>
+                        </div>
+                    </li>
+    
+                    <li class="sizeChartPopup">
+                        <a href="#">
+                            <img style="width: 100%; max-height: 48px;" src="./assets/header/ScaleIcon.svg" alt="Ícone para acessar a tabela de medidas">
+                            <span>Tabela de medidas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="head">
+            <h1>CATÁLOGO</h1>
+        </div>
+        
+        <div class="products">
+            <ul>
+                <li class="product">
+                    <article>
+                        <span>
+                            Brallet Lótus
+                        </span>
+
+                        <div class="product-image">
+                            <img class="blur" src="./assets/main/1.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 70,00</p>
+                        </span>
+                    </article>
+
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+
+                <li class="product">
+                    <article>
+                        <span>
+                            Brallet Jasmim
+                        </span>
+
+                        <div class="product-image">
+                            <img class="blur" src="./assets/main/2.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 90,00</p>
+                        </span>
+                    </article>
+
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+
+                <li class="product">
+                    <article>
+                        <span>
+                            Top Azaleia
+                        </span>
+                        
+                         <div class="product-image">
+                            <img class="blur" src="./assets/main/3.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 90,00</p>
+                        </span>
+                    </article>
+
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+
+                <li class="product">
+                    <article>
+                        <span>
+                            Biquini Cortininha
+                        </span>
+
+                        <div class="product-image">
+                            <img class="blur" src="./assets/main/4.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 100,00</p>
+                        </span>
+                    </article>
+
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+
+                <li class="product">
+                    <article>
+                        <span>
+                            Calcinha Lótus
+                        </span>
+
+                        <div class="product-image">
+                            <img class="blur" src="./assets/main/5.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 65,00</p>
+                        </span>
+                    </article>
+
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+
+                <li class="product">
+                    <article>
+                        <span>
+                            Calcinha Jasmim
+                        </span>
+
+                        <div class="product-image">
+                            <img class="blur" src="./assets/main/6.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 65,00</p>
+                        </span>
+                    </article>
+                    
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+
+                <li class="product">
+                    <article>
+                        <span>
+                            Calcinha Azaleia
+                        </span>
+
+                        <div class="product-image">
+                            <img class="blur" src="./assets/main/6.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 65,00</p>
+                        </span>
+                    </article>
+                    
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+
+                <li class="product">
+                    <article>
+                        <span>
+                            Biquini Calcinha
+                        </span>
+
+                        <div class="product-image">
+                            <img class="blur" src="./assets/main/6.jpg" alt="Imagem de produto">
+                        </div>
+
+                        <span>
+                            <p>A partir de <br> R$ 65,00</p>
+                        </span>
+                    </article>
+                    
+                    <div style="visibility: hidden;" class="addToCart" onclick="sumFunction()">
+                        <h3>ADICIONAR AO CARRINHO</h3>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="loginModal">
+            <div class="loginHead">
+                <div class="logoIcon">
+                    <img style="width: 100%;" src="./assets/main/HeaderIcon1.png" alt="Ícone do Atelie Cor de Pink">
+                </div>
+
+                <div class="btnCloseLoginModal">
+                    <button>✖</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>Faça seu login abaixo!</h2>
+            </div>
+
+            <div class="loginForm">
+                <form action="login">
+                    <fieldset>
+                        <label for="email">
+                            <legend>Endereço de e-mail</legend>
+
+                            <div>
+                                <img style="height: 1.2em;" src="./assets/main/EnvelopeSimple.svg" alt="Ícone de envelope para e-mail">
+
+                                <input type="email" name="email" id="email" placeholder="email@example.com" maxlength="48" size="50%">    
+                            </div>
+                        </label>
+                        
+                        <label for="password">
+                            <legend>Senha</legend>
+
+                            <div>
+                                <img style="height: 1.6em;" src="./assets/main/LockKey.svg" alt="Ícone de cadeado para senha">
+
+                                <input type="password" name="password" id="password" placeholder="********" maxlength="48" size="50%">    
+                            </div>
+                        </label>
+                        
+                        <div class="remember">
+                            <input type="checkbox" name="remember" id="remember">
+                            <legend>Lembrar meu login</legend>    
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="loginBtn">
+                <button>Entrar</button>
+            </div>
+            
+            <div class="loginLinks">
+                <a href="#">Esqueceu sua senha?</a>
+                <a href="#">Não possui conta? Crie uma agora!</a>
+            </div>
+        </div>
+
+        <div class="sizeChartModal">
+            <div class="sizeChartHead">
+                <div class="btnCloseSizeChartModal">
+                    <button>✖</button>
+                </div>
+
+                <div>
+                    <h2>tabela de medidas</h2>
+                </div>
+            </div>
+
+            <div class="topAndBrallet">
+                <div class="title">
+                    <h1>Top/Bralette</h1>
+                </div>
+
+                <div class="sizes">
+                    <div>
+                        <span>Tamanho</span>
+
+                        <ul>
+                            <li>P - 36/38</li>
+                            <li>M - 40/42</li>
+                            <li>G - 46/48</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <span>Embaixo do busto</span>
+
+                        <ul>
+                            <li>68 A 72 CM</li>
+                            <li>73 A 77 CM</li>
+                            <li>78 A 82 CM</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <span>Busto</span>
+
+                        <ul>
+                            <li>83 A 89 CM</li>
+                            <li>90 A 96 CM</li>
+                            <li>97 A 103 CM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="underwear">
+                <div class="title">
+                    <h1>Calcinha</h1>
+                </div>
+
+                <div class="sizes">
+                    <div>
+                        <span>Tamanho</span>
+
+                        <ul>
+                            <li>P - 36/38</li>
+                            <li>M - 40/42</li>
+                            <li>G - 46/48</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <span>Quadril</span>
+
+                        <ul>
+                            <li>87 A 94 CM</li>
+                            <li>95 A 102 CM</li>
+                            <li>103 A 110 CM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="lastlinks">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/_cordepink/" target="_blank">
+                        <img src="./assets/footer/SmInstagramLogo.svg" alt="Link para acessar o Instagram do Atelie Cor de Pink">
+                        <p>_cordepink</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.facebook.com/cordepinkatelie/" target="_blank">
+                        <img src="./assets/footer/SmFacebookLogo.svg" alt="Link para acessar o Facebook do Atelie Cor de Pink">
+                        <p>_cordepink</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://api.whatsapp.com/send?phone=%2B5551989512183/" target="_blank">
+                        <img src="./assets/footer/SmWhatsappLogo.svg" alt="Link para acessar o WhatsApp do Atelie Cor de Pink">
+                        <p>(51) 989512183</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.tiktok.com/@_cordepink/" target="_blank">
+                        <img src="./assets/footer/SmTiktokLogo.svg" alt="Link para acessar o TikTok do Atelie Cor de Pink">
+                        <p>_cordepink</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="fade"></div>
+</body>
+</html>
