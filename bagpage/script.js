@@ -91,3 +91,24 @@ document.addEventListener('mousemove', function(event) {
         sizeChartModal.style.top  = (mousePosition.y + offset[1]) + 'px';
     }
 }, true);
+
+const colorButtons = document.querySelectorAll(".colors button");
+const colorText = document.querySelectorAll('.colors span');
+
+for (let i = 0; i < colorButtons.length; i++) {
+    colorButtons[i].addEventListener('click', function() {
+        colorText[i].style.color = "#EC4899";
+        colorText[i].style.textDecoration = "underline"
+        colorButtons[i].style.border = "2px solid #EC4899"
+    });
+}
+
+let removerCartItemButtons = document.getElementsByClassName('remove')
+
+for (let i = 0; i < removerCartItemButtons.length; i++) {
+    let button = removerCartItemButtons[i]
+    button.addEventListener('click', function(event) {
+        let buttonClicked = event.target
+        buttonClicked.parentElement.parentElement.parentElement.remove()
+    })
+}

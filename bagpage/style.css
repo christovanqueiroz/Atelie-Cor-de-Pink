@@ -106,119 +106,224 @@ body main {
     align-items: center;
 }
 
-body main .bag {
+.bag {
     margin: 12px 0 12px 0;
     z-index: 1;
     height: 100%;
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-body main .bag .head {
+.bag .head {
     background-color: #EC4899;
     padding: 1em;
     width: 100%;
 }
 
-body main .bag .head h1 {
+.bag .head h1 {
     text-align: center;
     line-height: 1;
     color: #FFF;
     font-weight: 700;
 }
 
-body main .bag .main {
+.bag .item {
     display: flex;
     width: 100%;
     background-color: #FFF;
     padding: .5em 1.5em .5em 1.5em;
     border: 1px solid #EC4899;
+    border-top: none;
+    flex-direction: row;
 }
 
-body main .bag .main img {
+.bag .item img {
     border: 1px solid #EC4899;
     border-radius: 12px;
 }
 
-body main .bag .main .info {
+.bag .item .info {
     display: grid;
     margin-left: 2em;
     width: 100%;
     grid-template: 
-                "title price" auto
-                "selectcolor selectsizes" auto
-                "remover remover" auto;
+                "title price" 20%
+                "selectcolor selectsizes" 70%
+                "remover remover" 10%;
 }
 
-body main .bag .main .info > div {
+.bag .item .info > div {
     border: 1px solid #EC4899;
 }
 
-body main .bag .main .info .title {
+.bag .item .info .title {
     display: flex;
     grid-area: title;
     font-weight: 600;
 }
 
-body main .bag .main .info .price {
+.bag .item .info .price {
     display: flex;
     justify-content: center;
     grid-area: price;
 }
 
-body main .bag .main .info .selectcolor {
+.bag .item .info .selectcolor {
     display: flex;
     flex-direction: column;
     align-items: center;
     grid-area: selectcolor;
+    justify-content: space-around;
 }
 
-body main .bag .main .info .selectcolor .colors {
+.bag .item .info .selectcolor .colors {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1em;
     row-gap: 0.5em;
 }
 
-body main .bag .main .info .selectcolor .colors > div {
+.bag .item .info .selectcolor .colors > div {
     display: flex;
     align-items: center;
     gap: 0.35em;
 }
 
-body main .bag .main .info .selectcolor .colors .white > div,
-body main .bag .main .info .selectcolor .colors .black > div,
-body main .bag .main .info .selectcolor .colors .orange > div,
-body main .bag .main .info .selectcolor .colors .pink > div {
+.selectcolor .colors .white > #white,
+.selectcolor .colors .black > #black,
+.selectcolor .colors .orange > #orange,
+.selectcolor .colors .pink > #pink {
     height: 1.5em;
     width: 1.5em;
     border-radius: 100%;
     border: 1px solid #000;
+    margin-bottom: 0.125em;
 }
 
+.white > #white:hover,
+.black > #black:hover,
+.orange > #orange:hover,
+.pink > #pink:hover {
+    transform: scale(1.125);
+    transition: all .3s;
+    cursor: pointer;
+}
 
-body main .bag .main .info .selectsizes {
+.white > #white:checked + label {
+    text-decoration: underline;
+}
+
+.black > #black:checked + label {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.orange > #orange:checked + label {
+    color: #db732d;
+    font-weight: bold;
+    text-decoration: underline;    
+}
+
+.pink > #pink:checked + label {
+    color: #EC4899;
+    font-weight: bold;
+    text-decoration: underline;    
+}
+
+.bag .item .info .selectsizes {
     display: flex;
     flex-direction: column;
     align-items: center;
     grid-area: selectsizes;
+    justify-content: space-around;
 }
 
-body main .bag .main .info .selectsizes .sizes {
+.bag .item .info .selectsizes .sizes {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1em;
-    row-gap: 1em;
+    row-gap: 0.5em;
+}
+.bag .item .info .selectsizes .sizes div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.35em;
 }
 
-body main .bag .main .info .remove {
+#p,
+#m,
+#g,
+#gg {
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 100%;
+    border: 1px solid #000;
+    margin-bottom: 0.125em;
+}
+
+#p:hover,
+#m:hover,
+#g:hover,
+#gg:hover {
+    transform: scale(1.125);
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.sizes input:checked + label {
+    font-weight: bold;
+}
+
+.bag .item .info .remove {
     border: none;
     display: flex;
     grid-area: remover;
     justify-content: center;
+    align-items: center;
+    padding-top: 0.5em;
+    gap: 0.25em;
+    cursor: pointer;
+    color: #ff0000c5;
+}
+
+.bag .item .info .remove img {
+    border: none;
+    border-radius: none;
+}
+
+.bag .item .info .remove:hover {
+    color: #ff0000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.confirmation {
+    margin: 12px 0 12px 0;
+    z-index: 1;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation .head {
+    background-color: #EC4899;
+    padding: 1em;
+    width: 100%;
+}
+
+.confirmation .head h1 {
+    text-align: center;
+    line-height: 1;
+    color: #FFF;
+    font-weight: 700;
 }
 
 body footer {
