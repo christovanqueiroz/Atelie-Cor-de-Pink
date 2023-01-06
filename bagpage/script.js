@@ -1,4 +1,4 @@
-const addToCart = document.querySelectorAll('.addToCart');
+const addToCartButtons = document.querySelectorAll('.addToCartButtons');
 let cartQty = document.querySelector('.cartQty span');
 
 const products = document.querySelectorAll('.product')
@@ -14,7 +14,22 @@ const sizeChartModal = document.querySelector('.sizeChartModal');
 const modalFadeBackContent = document.querySelector('.fade');
 const body = document.querySelector('body');
 
-addToCart.forEach(card => {
+for (let i = 0; i < addToCartButtons.length; i++) {
+    let button = addToCartButtons[i]
+    button.addEventListener('click', addToCartClicked)
+}
+
+function addToCartClicked(event) {
+    let button = event.target;
+    let productItem = button.parentElement.parentElement;
+    let title = productItem.getElementsByClassName('item')[0].innerText;
+    let price = productItem.getElementsByClassName('price')[0].innerText;
+    let imageSrc = productItem.getElementsByClassName('blur')[0].src;
+
+    addItemToCart(title, price, imageSrc)
+}
+
+addToCartButtons.forEach(card => {
     card.addEventListener('click', () => {
         (document.querySelector('.cartQty')).style.display = 'flex';
     })
@@ -47,7 +62,7 @@ closeSizeChartModal.addEventListener('click', function(){
 
 products.forEach(product => {
     product.addEventListener('mouseover', () => {
-        (product.querySelector('.addToCart')).style.visibility = 'visible';
+        (product.querySelector('.addToCartButtons')).style.visibility = 'visible';
         (product.querySelector('.blur').style.filter = 'blur(1.5px');
         (product.querySelector('.sliders').style.visibility = 'visible');
     })
@@ -55,7 +70,7 @@ products.forEach(product => {
 
 products.forEach(product => {
     product.addEventListener('mouseout', () => {
-        (product.querySelector('.addToCart')).style.visibility = 'hidden';
+        (product.querySelector('.addToCartButtons')).style.visibility = 'hidden';
         (product.querySelector('.blur')).style.filter = 'none';
         (product.querySelector('.sliders').style.visibility = 'hidden');
     })
@@ -103,10 +118,10 @@ for (let i = 0; i < colorButtons.length; i++) {
     });
 }
 
-let removerCartItemButtons = document.getElementsByClassName('remove')
+let removeCartItemButtons = document.getElementsByClassName('remove')
 
-for (let i = 0; i < removerCartItemButtons.length; i++) {
-    let button = removerCartItemButtons[i]
+for (let i = 0; i < removeCartItemButtons.length; i++) {
+    let button = removeCartItemButtons[i]
     button.addEventListener('click', function(event) {
         let buttonClicked = event.target
         buttonClicked.parentElement.parentElement.parentElement.remove()

@@ -1,4 +1,4 @@
-const addToCart = document.querySelectorAll('.addToCart');
+const addToCartButtons = document.querySelectorAll('.addToCartButtons');
 let cartQty = document.querySelector('.cartQty span');
 
 const products = document.querySelectorAll('.product')
@@ -14,7 +14,27 @@ const sizeChartModal = document.querySelector('.sizeChartModal');
 const modalFadeBackContent = document.querySelector('.fade');
 const body = document.querySelector('body');
 
-addToCart.forEach(card => {
+for (let i = 0; i < addToCartButtons.length; i++) {
+    let button = addToCartButtons[i]
+    button.addEventListener('click', addToCartClicked)
+}
+
+function addToCartClicked(event) {
+    let button = event.target;
+    let productItem = button.parentElement.parentElement;
+    let title = productItem.getElementsByClassName('item')[0].innerText;
+    let price = productItem.getElementsByClassName('price')[0].innerText;
+    let imageSrc = productItem.getElementsByClassName('blur')[0].src;
+
+    addItemToCart(title, price, imageSrc)
+}
+
+function addItemToCart(title, price, imageSrc) {
+    let cartRow = document.createElement('div')
+    cartRow.innerText = title
+}
+
+addToCartButtons.forEach(card => {
     card.addEventListener('click', () => {
         (document.querySelector('.cartQty')).style.display = 'flex';
     })
@@ -47,17 +67,15 @@ closeSizeChartModal.addEventListener('click', function(){
 
 products.forEach(product => {
     product.addEventListener('mouseover', () => {
-        (product.querySelector('.addToCart')).style.visibility = 'visible';
+        (product.querySelector('.addToCartButtons')).style.visibility = 'visible';
         (product.querySelector('.blur').style.filter = 'blur(1.5px');
-        (product.querySelector('.sliders').style.visibility = 'visible');
     })
 })
 
 products.forEach(product => {
     product.addEventListener('mouseout', () => {
-        (product.querySelector('.addToCart')).style.visibility = 'hidden';
+        (product.querySelector('.addToCartButtons')).style.visibility = 'hidden';
         (product.querySelector('.blur')).style.filter = 'none';
-        (product.querySelector('.sliders').style.visibility = 'hidden');
     })
 })
 

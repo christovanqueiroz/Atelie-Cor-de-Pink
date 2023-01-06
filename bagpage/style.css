@@ -117,20 +117,20 @@ body main {
     justify-content: center;
 }
 
-.bag .head {
+.bag .bagHead {
     background-color: #EC4899;
     padding: 1em;
     width: 100%;
 }
 
-.bag .head h1 {
+.bag .bagHead h1 {
     text-align: center;
     line-height: 1;
     color: #FFF;
     font-weight: 700;
 }
 
-.bag .item {
+.bag .cartItem {
     display: flex;
     width: 100%;
     background-color: #FFF;
@@ -140,12 +140,12 @@ body main {
     flex-direction: row;
 }
 
-.bag .item img {
+.bag .cartItem img {
     border: 1px solid #EC4899;
     border-radius: 12px;
 }
 
-.bag .item .info {
+.bag .cartItem .info {
     display: grid;
     margin-left: 2em;
     width: 100%;
@@ -155,23 +155,23 @@ body main {
                 "remover remover" 10%;
 }
 
-.bag .item .info > div {
+.bag .cartItem .info > div {
     border: 1px solid #EC4899;
 }
 
-.bag .item .info .title {
+.bag .cartItem .info .title {
     display: flex;
     grid-area: title;
     font-weight: 600;
 }
 
-.bag .item .info .price {
+.bag .cartItem .info .price {
     display: flex;
     justify-content: center;
     grid-area: price;
 }
 
-.bag .item .info .selectcolor {
+.bag .cartItem .info .selectcolor {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,23 +179,23 @@ body main {
     justify-content: space-around;
 }
 
-.bag .item .info .selectcolor .colors {
+.bag .cartItem .info .selectcolor .colors {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1em;
     row-gap: 0.5em;
 }
 
-.bag .item .info .selectcolor .colors > div {
+.bag .cartItem .info .selectcolor .colors > div {
     display: flex;
     align-items: center;
     gap: 0.35em;
 }
 
-.selectcolor .colors .white > #white,
-.selectcolor .colors .black > #black,
-.selectcolor .colors .orange > #orange,
-.selectcolor .colors .pink > #pink {
+.selectcolor .colors .white #white,
+.selectcolor .colors .black #black,
+.selectcolor .colors .orange #orange,
+.selectcolor .colors .pink #pink {
     height: 1.5em;
     width: 1.5em;
     border-radius: 100%;
@@ -203,38 +203,38 @@ body main {
     margin-bottom: 0.125em;
 }
 
-.white > #white:hover,
-.black > #black:hover,
-.orange > #orange:hover,
-.pink > #pink:hover {
+.white #white:hover,
+.black #black:hover,
+.orange #orange:hover,
+.pink #pink:hover {
     transform: scale(1.125);
     transition: all .3s;
     cursor: pointer;
 }
 
-.white > #white:checked + label {
+.white #white:checked + label {
     text-decoration: underline;
 }
 
-.black > #black:checked + label {
+.black #black:checked + label {
     color: #000;
     font-weight: bold;
     text-decoration: underline;
 }
 
-.orange > #orange:checked + label {
+.orange #orange:checked + label {
     color: #db732d;
     font-weight: bold;
     text-decoration: underline;    
 }
 
-.pink > #pink:checked + label {
+.pink #pink:checked + label {
     color: #EC4899;
     font-weight: bold;
     text-decoration: underline;    
 }
 
-.bag .item .info .selectsizes {
+.bag .cartItem .info .selectsizes {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -242,13 +242,13 @@ body main {
     justify-content: space-around;
 }
 
-.bag .item .info .selectsizes .sizes {
+.bag .cartItem .info .selectsizes .sizes {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1em;
     row-gap: 0.5em;
 }
-.bag .item .info .selectsizes .sizes div {
+.bag .cartItem .info .selectsizes .sizes div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -279,7 +279,7 @@ body main {
     font-weight: bold;
 }
 
-.bag .item .info .remove {
+.bag .cartItem .info .remove {
     border: none;
     display: flex;
     grid-area: remover;
@@ -291,15 +291,14 @@ body main {
     color: #ff0000c5;
 }
 
-.bag .item .info .remove img {
+.bag .cartItem .info .remove img {
     border: none;
     border-radius: none;
 }
 
-.bag .item .info .remove:hover {
+.bag .cartItem .info .remove:hover {
     color: #ff0000;
     text-decoration: underline;
-    font-weight: 600;
 }
 
 .confirmation {

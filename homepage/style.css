@@ -160,9 +160,10 @@ body main .products ul li article .product-image img {
     height: 100%;
     min-height: 300px;
     max-height: 300px;
+    transition: .35s ease-in;
 }
 
-body main .products ul li article span:first-child {
+body main .products ul li article .item {
     text-align: center;
     height: 1.85em;
     background: #fff;
@@ -175,47 +176,47 @@ body main .products ul li article span:first-child {
     font-weight: 500;
 }
 
-body main .products ul li article span:last-child {
+body main .products ul li article .price {
     text-align: center;
-    height: 3em;
+    height: 1.5em;
     background: #EC4899;
     border-radius: 0 0 36px 0;
     padding-top: 0.25em;
-}
-
-body main .products ul li article span:last-child p {
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1em;
     color: #FFF;
 }
 
-body main .products ul li .addToCart {
+body main .products ul li .addToCartButtons {
     height: 5em;
     width: 12em;
-    padding: 1em;
     text-align: center;
     align-items: center;
     border: 2px dashed #FDF2F8;
     border-radius: 12px;
     display: flex;
     position: absolute;
-    transform: translate(17.5%, -300%);
+    transform: translate(17.5%, -280%);
     background-color: #FCE7F370;
 }
 
-body main .products ul li .addToCart:hover {
+body main .products ul li .addToCartButtons:hover {
     transition: .5s;
     cursor: pointer;
     background-color: #EC4899;
-    border: none;
+    border: 2px solid #EC4899;
 }
 
-body main .products ul li .addToCart h3 {
+body main .products ul li .addToCartButtons h3 {
     font-weight: 700;
     line-height: 1.35em;
     color: #fff;
     border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 0.70em;
 }
 
 body footer {
@@ -548,7 +549,7 @@ body main .sizes > div {
 }
 
 @media (max-width:1200px) {
-    body main .products ul .product .addToCart {
+    body main .products ul .product .addToCartButtons {
         transform: translate(12.5%, -300%);
     }
 }
