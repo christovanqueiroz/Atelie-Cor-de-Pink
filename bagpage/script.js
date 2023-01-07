@@ -1,8 +1,3 @@
-const addToCartButtons = document.querySelectorAll('.addToCartButtons');
-let cartQty = document.querySelector('.cartQty span');
-
-const products = document.querySelectorAll('.product')
-
 const openLoginModal = document.querySelector('.loginPopup');
 const closeLoginModal = document.querySelector('.btnCloseLoginModal');
 const loginModal = document.querySelector('.loginModal');
@@ -14,29 +9,114 @@ const sizeChartModal = document.querySelector('.sizeChartModal');
 const modalFadeBackContent = document.querySelector('.fade');
 const body = document.querySelector('body');
 
-for (let i = 0; i < addToCartButtons.length; i++) {
-    let button = addToCartButtons[i]
-    button.addEventListener('click', addToCartClicked)
+let title = localStorage.getItem("title");
+let price = localStorage.getItem("price");
+let imageSrc = localStorage.getItem("imageSrc");
+console.log(title, price, imageSrc)
+
+function addItemToCart(title, price, imageSrc) {
+    let cartRow = document.createElement('div');
+    cartRow.classList.add('cartItem')
+    let cartItems = document.getElementsByClassName('bag')[0]
+    let cartRowContents = `
+            <img src="${imageSrc}" style="width: 144px; height: 144px;" alt="">
+
+            <div class="info">
+                <div class="title">
+                    <span>${title}</span>
+                </div>
+
+                <div class="price">
+                    <span><b>${price}</b></span>
+                </div>
+
+                <div class="selectcolor">
+                    <span>Selecione a cor</span>
+
+                    <form class="colors">
+                        <div class="white">
+                            <input type="radio" id="white" value="white" name="colors">
+                            <label for="white">Branco</label>
+                        </div>
+
+                        <div class="black">
+                            <input type="radio" id="black" value="black" name="colors">
+                            <label for="black">Preto</label>
+                        </div>
+
+                        <div class="orange">
+                            <input type="radio" id="orange" value="orange" name="colors">
+                            <label for="orange">Laranja</label>
+                        </div>
+
+
+                        <div class="pink">
+                            <input type="radio" id="pink" value="pink" name="colors">
+                            <label for="pink">Rosa</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="selectsizes">
+                    <span>Tamanho</span>
+
+                    <form class="sizes">
+                        <div>
+                            <input type="radio" id="p" value="p" name="sizes">
+                            <label for="p">P</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="m" value="m" name="sizes">
+                            <label for="m">M</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="g" value="g" name="sizes">
+                            <label for="g">G</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="gg" value="gg" name="sizes">
+                            <label for="gg">GG</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="remove">
+                    <img src="./assets/main/Trash.svg" alt="">
+                    <span>Remover</span>
+                </div>
+            </div>`
+
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    document.querySelector('.emptyBag').style.display = "none";
 }
 
-function addToCartClicked(event) {
-    let button = event.target;
-    let productItem = button.parentElement.parentElement;
-    let title = productItem.getElementsByClassName('item')[0].innerText;
-    let price = productItem.getElementsByClassName('price')[0].innerText;
-    let imageSrc = productItem.getElementsByClassName('blur')[0].src;
+addItemToCart(title, price, imageSrc)
 
-    addItemToCart(title, price, imageSrc)
-}
+let removeCartItemButtons = document.getElementsByClassName('remove')
 
-addToCartButtons.forEach(card => {
-    card.addEventListener('click', () => {
-        (document.querySelector('.cartQty')).style.display = 'flex';
+for (let i = 0; i < removeCartItemButtons.length; i++) {
+    let button = removeCartItemButtons[i]
+    button.addEventListener('click', function(event) {
+        let buttonClicked = event.target
+        buttonClicked.parentElement.parentElement.parentElement.remove()
+        localStorage.clear()
+        document.querySelector('.emptyBag').style.display = "flex";
     })
-})
+}
 
-function sumFunction() {
-    cartQty.innerHTML = parseInt(cartQty.innerHTML) + 1
+const colorButtons = document.querySelectorAll(".colors button");
+const colorText = document.querySelectorAll('.colors span');
+
+for (let i = 0; i < colorButtons.length; i++) {
+    colorButtons[i].addEventListener('click', function() {
+        colorText[i].style.color = "#EC4899";
+        colorText[i].style.textDecoration = "underline"
+        colorButtons[i].style.border = "2px solid #EC4899"
+    });
 }
 
 openLoginModal.addEventListener('click', function(){
@@ -58,22 +138,6 @@ openSizeChartModal.addEventListener('click', function() {
 
 closeSizeChartModal.addEventListener('click', function(){
     sizeChartModal.classList.replace("sizeChartModalVisible", "sizeChartModal");
-})
-
-products.forEach(product => {
-    product.addEventListener('mouseover', () => {
-        (product.querySelector('.addToCartButtons')).style.visibility = 'visible';
-        (product.querySelector('.blur').style.filter = 'blur(1.5px');
-        (product.querySelector('.sliders').style.visibility = 'visible');
-    })
-})
-
-products.forEach(product => {
-    product.addEventListener('mouseout', () => {
-        (product.querySelector('.addToCartButtons')).style.visibility = 'hidden';
-        (product.querySelector('.blur')).style.filter = 'none';
-        (product.querySelector('.sliders').style.visibility = 'hidden');
-    })
 })
 
 let mousePosition;
@@ -106,24 +170,3 @@ document.addEventListener('mousemove', function(event) {
         sizeChartModal.style.top  = (mousePosition.y + offset[1]) + 'px';
     }
 }, true);
-
-const colorButtons = document.querySelectorAll(".colors button");
-const colorText = document.querySelectorAll('.colors span');
-
-for (let i = 0; i < colorButtons.length; i++) {
-    colorButtons[i].addEventListener('click', function() {
-        colorText[i].style.color = "#EC4899";
-        colorText[i].style.textDecoration = "underline"
-        colorButtons[i].style.border = "2px solid #EC4899"
-    });
-}
-
-let removeCartItemButtons = document.getElementsByClassName('remove')
-
-for (let i = 0; i < removeCartItemButtons.length; i++) {
-    let button = removeCartItemButtons[i]
-    button.addEventListener('click', function(event) {
-        let buttonClicked = event.target
-        buttonClicked.parentElement.parentElement.parentElement.remove()
-    })
-}

@@ -130,13 +130,23 @@ body main {
     font-weight: 700;
 }
 
+.bag .emptyBag {
+    display: flex;
+    width: 100%;
+    background-color: #FFF;
+    padding: .5em 1.5em .5em 1.5em;
+    border: 1px solid #EC4899;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
 .bag .cartItem {
     display: flex;
     width: 100%;
     background-color: #FFF;
     padding: .5em 1.5em .5em 1.5em;
     border: 1px solid #EC4899;
-    border-top: none;
     flex-direction: row;
 }
 

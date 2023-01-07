@@ -26,12 +26,9 @@ function addToCartClicked(event) {
     let price = productItem.getElementsByClassName('price')[0].innerText;
     let imageSrc = productItem.getElementsByClassName('blur')[0].src;
 
-    addItemToCart(title, price, imageSrc)
-}
-
-function addItemToCart(title, price, imageSrc) {
-    let cartRow = document.createElement('div')
-    cartRow.innerText = title
+    localStorage.setItem('title', title);
+    localStorage.setItem("price", price)
+    localStorage.setItem("imageSrc", imageSrc)
 }
 
 addToCartButtons.forEach(card => {
