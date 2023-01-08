@@ -2,6 +2,8 @@ const openLoginModal = document.querySelector('.loginPopup');
 const closeLoginModal = document.querySelector('.btnCloseLoginModal');
 const loginModal = document.querySelector('.loginModal');
 
+let bagList = document.getElementById('bagList')
+
 const openSizeChartModal = document.querySelector('.sizeChartPopup');
 const closeSizeChartModal = document.querySelector('.btnCloseSizeChartModal');
 const sizeChartModal = document.querySelector('.sizeChartModal');
@@ -9,15 +11,12 @@ const sizeChartModal = document.querySelector('.sizeChartModal');
 const modalFadeBackContent = document.querySelector('.fade');
 const body = document.querySelector('body');
 
-let title = localStorage.getItem("title");
-let price = localStorage.getItem("price");
-let imageSrc = localStorage.getItem("imageSrc");
-console.log(title, price, imageSrc)
+const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+console.log(cartItems)
 
-function addItemToCart(title, price, imageSrc) {
+function addItemToCart(title, price, imageSrc, index) {
     let cartRow = document.createElement('div');
     cartRow.classList.add('cartItem')
-    let cartItems = document.getElementsByClassName('bag')[0]
     let cartRowContents = `
             <img src="${imageSrc}" style="width: 144px; height: 144px;" alt="">
 
@@ -83,30 +82,36 @@ function addItemToCart(title, price, imageSrc) {
                     </form>
                 </div>
 
-                <div class="remove">
+                <div class="remove" onclick="removeItem(${index})">
                     <img src="./assets/main/Trash.svg" alt="">
                     <span>Remover</span>
                 </div>
             </div>`
 
     cartRow.innerHTML = cartRowContents
-    cartItems.append(cartRow)
+    bagList.append(cartRow)
     document.querySelector('.emptyBag').style.display = "none";
 }
 
-addItemToCart(title, price, imageSrc)
-
-let removeCartItemButtons = document.getElementsByClassName('remove')
-
-for (let i = 0; i < removeCartItemButtons.length; i++) {
-    let button = removeCartItemButtons[i]
-    button.addEventListener('click', function(event) {
-        let buttonClicked = event.target
-        buttonClicked.parentElement.parentElement.parentElement.remove()
-        localStorage.clear()
+function renderProductItems() {
+    bagList.innerHTML = ''
+    cartItems.forEach(({title, price, imageSrc}, index) => {
+        addItemToCart(title, price, imageSrc, index)
+    });
+    
+    if(cartItems.length === 0) {
         document.querySelector('.emptyBag').style.display = "flex";
-    })
+    }
 }
+
+function removeItem(index) {
+    cartItems.splice(index, 1);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    renderProductItems()
+}
+
+
+renderProductItems()
 
 const colorButtons = document.querySelectorAll(".colors button");
 const colorText = document.querySelectorAll('.colors span');

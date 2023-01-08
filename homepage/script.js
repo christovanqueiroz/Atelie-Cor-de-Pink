@@ -1,3 +1,5 @@
+const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
 const addToCartButtons = document.querySelectorAll('.addToCartButtons');
 let cartQty = document.querySelector('.cartQty span');
 
@@ -26,20 +28,29 @@ function addToCartClicked(event) {
     let price = productItem.getElementsByClassName('price')[0].innerText;
     let imageSrc = productItem.getElementsByClassName('blur')[0].src;
 
-    localStorage.setItem('title', title);
-    localStorage.setItem("price", price)
-    localStorage.setItem("imageSrc", imageSrc)
+    cartItems.push({
+        title,
+        price,
+        imageSrc
+    });
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
 }
 
 addToCartButtons.forEach(card => {
     card.addEventListener('click', () => {
         (document.querySelector('.cartQty')).style.display = 'flex';
+        cartQty.innerHTML = parseInt(cartItems.length);
     })
 })
 
 function sumFunction() {
-    cartQty.innerHTML = parseInt(cartQty.innerHTML) + 1
+    cartQty.innerHTML = parseInt(cartItems.length);
+    if(cartItems.length)
+        document.querySelector('.cartQty').style.display = 'flex';
 }
+
+sumFunction()
 
 openLoginModal.addEventListener('click', function(){
     loginModal.classList.replace("loginModal", "loginModalVisible");

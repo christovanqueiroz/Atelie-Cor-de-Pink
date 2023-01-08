@@ -141,13 +141,22 @@ body main {
     font-size: 1.5em;
 }
 
+
+.bag #bagList {
+    display: flex;
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid #EC4899;
+    flex-direction: column;
+}
+
 .bag .cartItem {
     display: flex;
     width: 100%;
     background-color: #FFF;
     padding: .5em 1.5em .5em 1.5em;
-    border: 1px solid #EC4899;
     flex-direction: row;
+    border-bottom: 1px solid #EC4899;
 }
 
 .bag .cartItem img {
