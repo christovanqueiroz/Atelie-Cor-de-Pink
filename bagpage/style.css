@@ -24,7 +24,7 @@ body header {
 
 body header .logoIcon {
     max-width: 50px;
-    min-width: 20px;
+    min-width: 48px;
 }
 
 body header .links {
@@ -691,6 +691,34 @@ body main .sizes > div {
     }
 }
 
+@media (max-width:945px) {
+    .bag .cartItem {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .bag .cartItem img {
+        max-width: 125px;
+    }
+
+    .bag .cartItem .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        border: 1px solid #EC4899;
+    }
+
+    .bag .cartItem .info .title,
+    .bag .cartItem .info .price,
+    .bag .cartItem .info .selectcolor,
+    .bag .cartItem .info .selectsizes {
+        border: none;
+        text-align: center;
+    }
+}
+
 @media (max-width:745px) {
     body header .links nav ul {
         max-height: min-content;
@@ -699,8 +727,21 @@ body main .sizes > div {
 }
 
 @media (max-width:650px) {
+    .bag {
+        width: 100%;
+    }
+
+    .bag .cartItem .info .selectcolor .colors,
+    .bag .cartItem .info .selectsizes .sizes {
+        display: flex;
+    }
+
     body footer .lastlinks ul li p {
         display: none;
+    }
+
+    .confirmation {
+        width: 100%;
     }
 }
 
@@ -708,10 +749,33 @@ body main .sizes > div {
     body header {
         justify-content: space-between;
         padding: 0 1em;
+        gap: 1em;
     }
 
     body header .links nav ul li {
         min-width: 30px;
         width: 2.5em;
+    }
+}
+
+@media (max-width:400px) {
+    .bag .cartItem .info .selectcolor .colors,
+    .bag .cartItem .info .selectsizes .sizes {
+        flex-direction: column;
+        row-gap: 0.15em;
+    }
+
+    body footer .lastlinks ul {
+        gap: 1em;
+    }
+}
+
+@media (max-width:250px) {
+    body header .links nav ul {
+        gap: 0.25em;
+    }
+    
+    body footer .lastlinks ul {
+        gap: 0;
     }
 }
