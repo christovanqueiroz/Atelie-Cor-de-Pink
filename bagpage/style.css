@@ -324,24 +324,32 @@ body main {
     margin: 12px 0 12px 0;
     z-index: 1;
     height: 100%;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.confirmation .head {
     background-color: #EC4899;
     padding: 1em;
-    width: 100%;
-}
-
-.confirmation .head h1 {
+    cursor: pointer;
+    color: #FFF;
     text-align: center;
     line-height: 1;
-    color: #FFF;
     font-weight: 700;
+    border-radius: 12px;
+    border: 1px solid #EC4899;
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.25);
+}
+.confirmation a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.confirmation:hover {
+    background-color: #FFF;
+    color: #EC4899;
 }
 
 body footer {
@@ -578,7 +586,7 @@ body main .sizeChartModalVisible {
     position: absolute;
     width: 40%;
     min-width: 270px;
-    height: 70%;
+    min-height: fit-content;
     align-items: center;
     border: 3px solid #EC4899;
     border-radius: 2em;
@@ -741,7 +749,7 @@ body main .sizes > div {
     }
 
     .confirmation {
-        width: 100%;
+        width: 75%;
     }
 }
 

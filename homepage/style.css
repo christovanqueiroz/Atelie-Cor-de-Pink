@@ -453,7 +453,7 @@ body main .sizeChartModalVisible {
     position: absolute;
     width: 40%;
     min-width: 270px;
-    height: 70%;
+    min-height: fit-content;
     align-items: center;
     border: 3px solid #EC4899;
     border-radius: 2em;

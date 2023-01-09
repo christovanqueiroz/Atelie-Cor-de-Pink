@@ -15,7 +15,6 @@ const modalFadeBackContent = document.querySelector('.fade');
 const body = document.querySelector('body');
 
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-console.log(cartItems)
 
 function addItemToCart(title, price, imageSrc, index) {
     let cartRow = document.createElement('div');
@@ -37,23 +36,23 @@ function addItemToCart(title, price, imageSrc, index) {
 
                     <form class="colors">
                         <div class="white">
-                            <input type="radio" id="white" value="white" name="colors">
+                            <input type="radio" value="white" name="colors">
                             <label for="white">Branco</label>
                         </div>
 
                         <div class="black">
-                            <input type="radio" id="black" value="black" name="colors">
+                            <input type="radio" value="black" name="colors">
                             <label for="black">Preto</label>
                         </div>
 
                         <div class="orange">
-                            <input type="radio" id="orange" value="orange" name="colors">
+                            <input type="radio" value="orange" name="colors">
                             <label for="orange">Laranja</label>
                         </div>
 
 
                         <div class="pink">
-                            <input type="radio" id="pink" value="pink" name="colors">
+                            <input type="radio" value="pink" name="colors">
                             <label for="pink">Rosa</label>
                         </div>
                     </form>
@@ -64,22 +63,22 @@ function addItemToCart(title, price, imageSrc, index) {
 
                     <form class="sizes">
                         <div>
-                            <input type="radio" id="p" value="p" name="sizes">
+                            <input type="radio" value="p" name="sizes">
                             <label for="p">P</label>
                         </div>
 
                         <div>
-                            <input type="radio" id="m" value="m" name="sizes">
+                            <input type="radio" value="m" name="sizes">
                             <label for="m">M</label>
                         </div>
 
                         <div>
-                            <input type="radio" id="g" value="g" name="sizes">
+                            <input type="radio" value="g" name="sizes">
                             <label for="g">G</label>
                         </div>
 
                         <div>
-                            <input type="radio" id="gg" value="gg" name="sizes">
+                            <input type="radio"  value="gg" name="sizes">
                             <label for="gg">GG</label>
                         </div>
                     </form>
@@ -110,7 +109,21 @@ function renderProductItems() {
         cartQty.innerHTML = cartItems.length;
     }
 }
+const confirmationButton = document.querySelector('.confirmation')
 
+
+function sendMessage() {
+    let send = document.createElement('a')
+    let sendContent = `https://wa.me/5551989512183?text=Tenho%20interesse%20em%20comprar%20seu%20carro`;
+    send.innerHTML = sendContent;
+    confirmationButton.append(send)
+}
+
+/* confirmationButton.addEventListener('click', function() {
+    if(cartItems.length === 0) {
+    } else {
+    }
+}) */
 
 function removeItem(index) {
     cartItems.splice(index, 1);
@@ -120,17 +133,6 @@ function removeItem(index) {
 }
 
 renderProductItems()
-
-const colorButtons = document.querySelectorAll(".colors button");
-const colorText = document.querySelectorAll('.colors span');
-
-for (let i = 0; i < colorButtons.length; i++) {
-    colorButtons[i].addEventListener('click', function() {
-        colorText[i].style.color = "#EC4899";
-        colorText[i].style.textDecoration = "underline"
-        colorButtons[i].style.border = "2px solid #EC4899"
-    });
-}
 
 openLoginModal.addEventListener('click', function(){
     loginModal.classList.replace("loginModal", "loginModalVisible");
