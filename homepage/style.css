@@ -522,16 +522,12 @@ body main .underwear {
     color: #EC4899;
 }
 
-body main .topAndBrallet {
-    margin-bottom: 1.5em;
-}
-
 body main .sizes {
     display: flex;
     justify-content: center;
     text-transform: uppercase;
     text-align: center;
-    gap: 2em;
+    gap: 1.75em;
 }
 
 body main .sizes span {
@@ -540,7 +536,7 @@ body main .sizes span {
 
 body main .sizes ul {
     list-style: none;
-    font-size: 1.25em;
+    font-size: 1.10em;
 }
 
 body main .sizes > div {

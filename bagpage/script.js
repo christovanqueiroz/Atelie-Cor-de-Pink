@@ -4,6 +4,9 @@ const loginModal = document.querySelector('.loginModal');
 
 let bagList = document.getElementById('bagList')
 
+let cartQty = document.querySelector('.cartQty span');
+
+
 const openSizeChartModal = document.querySelector('.sizeChartPopup');
 const closeSizeChartModal = document.querySelector('.btnCloseSizeChartModal');
 const sizeChartModal = document.querySelector('.sizeChartModal');
@@ -101,15 +104,20 @@ function renderProductItems() {
     
     if(cartItems.length === 0) {
         document.querySelector('.emptyBag').style.display = "flex";
+        document.querySelector('.cartQty').style.display = 'none';
+    } else {
+        document.querySelector('.cartQty').style.display = 'flex';
+        cartQty.innerHTML = cartItems.length;
     }
 }
+
 
 function removeItem(index) {
     cartItems.splice(index, 1);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    cartQty.innerHTML = parseInt(cartItems.length)
     renderProductItems()
 }
-
 
 renderProductItems()
 
