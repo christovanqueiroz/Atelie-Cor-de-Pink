@@ -321,7 +321,7 @@ body main {
 }
 
 .confirmation {
-    margin: 12px 0 12px 0;
+    margin-bottom: 12px;
     z-index: 1;
     height: 100%;
     width: 40%;
@@ -330,7 +330,6 @@ body main {
     align-items: center;
     justify-content: center;
     background-color: #EC4899;
-    padding: 1em;
     cursor: pointer;
     color: #FFF;
     text-align: center;
@@ -342,9 +341,19 @@ body main {
     -webkit-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.25);
 }
+
 .confirmation a {
     text-decoration: none;
     color: #FFF;
+    width: 100%;
+    padding: 1em;
+}
+
+.confirmation span {
+    text-decoration: none;
+    color: #FFF;
+    width: 100%;
+    padding: 1em;
 }
 
 .confirmation:hover {

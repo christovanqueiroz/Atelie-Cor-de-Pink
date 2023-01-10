@@ -95,6 +95,8 @@ function addItemToCart(title, price, imageSrc, index) {
     document.querySelector('.emptyBag').style.display = "none";
 }
 
+const confirmationButton = document.querySelector('.confirmation')
+
 function renderProductItems() {
     bagList.innerHTML = ''
     cartItems.forEach(({title, price, imageSrc}, index) => {
@@ -104,26 +106,20 @@ function renderProductItems() {
     if(cartItems.length === 0) {
         document.querySelector('.emptyBag').style.display = "flex";
         document.querySelector('.cartQty').style.display = 'none';
+        confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
+        confirmationButton.addEventListener('click', function() {
+            if(cartItems.length === 0) {
+                alert('Adicione as compras a sacola')
+            }
+        })
+        
     } else {
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
+        
+        confirmationButton.innerHTML = '<a href="https://wa.me/5551989512183?text=Tenho%20interesse%20em%20comprar%20seu%20carro" target="_blank">CONFIRMAR PEDIDO</a>';
     }
 }
-const confirmationButton = document.querySelector('.confirmation')
-
-
-function sendMessage() {
-    let send = document.createElement('a')
-    let sendContent = `https://wa.me/5551989512183?text=Tenho%20interesse%20em%20comprar%20seu%20carro`;
-    send.innerHTML = sendContent;
-    confirmationButton.append(send)
-}
-
-/* confirmationButton.addEventListener('click', function() {
-    if(cartItems.length === 0) {
-    } else {
-    }
-}) */
 
 function removeItem(index) {
     cartItems.splice(index, 1);
