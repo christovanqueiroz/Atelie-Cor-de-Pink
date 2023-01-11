@@ -159,9 +159,13 @@ body main {
     border-bottom: 1px solid #EC4899;
 }
 
-.bag .cartItem img {
+.bag .cartItem > img {
     border: 1px solid #EC4899;
     border-radius: 12px;
+    min-width: 145px;
+    max-width: 145px;
+    min-height: 180px;
+    max-height: 180px;
 }
 
 .bag .cartItem .info {
@@ -714,11 +718,7 @@ body main .sizes > div {
         align-items: center;
         gap: 1em;
     }
-
-    .bag .cartItem img {
-        max-width: 125px;
-    }
-
+    
     .bag .cartItem .info {
         display: flex;
         flex-direction: column;
@@ -744,25 +744,12 @@ body main .sizes > div {
 }
 
 @media (max-width:650px) {
-    .bag {
-        width: 100%;
-    }
-
-    .bag .cartItem .info .selectcolor .colors,
-    .bag .cartItem .info .selectsizes .sizes {
-        display: flex;
-    }
-
     body footer .lastlinks ul li p {
         display: none;
     }
-
-    .confirmation {
-        width: 75%;
-    }
 }
 
-@media (max-width:500px) {
+@media (max-width:510px) {
     body header {
         justify-content: space-between;
         padding: 0 1em;
@@ -772,6 +759,19 @@ body main .sizes > div {
     body header .links nav ul li {
         min-width: 30px;
         width: 2.5em;
+    }
+
+    .bag {
+        width: 100%;
+    }
+
+    .bag .cartItem .info .selectcolor .colors,
+    .bag .cartItem .info .selectsizes .sizes {
+        display: flex;
+    }
+
+    .confirmation {
+        width: 75%;
     }
 }
 

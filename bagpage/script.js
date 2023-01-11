@@ -20,7 +20,7 @@ function addItemToCart(title, price, imageSrc, index) {
     let cartRow = document.createElement('div');
     cartRow.classList.add('cartItem')
     let cartRowContents = `
-            <img src="${imageSrc}" style="width: 144px; height: 144px;" alt="">
+            <img src="${imageSrc}" alt="">
 
             <div class="info">
                 <div class="title">
@@ -95,6 +95,12 @@ function addItemToCart(title, price, imageSrc, index) {
     document.querySelector('.emptyBag').style.display = "none";
 }
 
+let messageQty = cartItems.length
+
+let messageTitleContent = `${cartItems[0].title}`
+
+let messageTitle = messageTitleContent.repeat(messageQty)
+
 const confirmationButton = document.querySelector('.confirmation')
 
 function renderProductItems() {
@@ -108,16 +114,13 @@ function renderProductItems() {
         document.querySelector('.cartQty').style.display = 'none';
         confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
         confirmationButton.addEventListener('click', function() {
-            if(cartItems.length === 0) {
-                alert('Adicione as compras a sacola')
-            }
+            if(cartItems.length === 0) alert('Adicione as compras a sacola')
         })
         
     } else {
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
-        
-        confirmationButton.innerHTML = '<a href="https://wa.me/5551989512183?text=Tenho%20interesse%20em%20comprar%20seu%20carro" target="_blank">CONFIRMAR PEDIDO</a>';
+        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${messageTitle}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
 }
 
