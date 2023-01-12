@@ -360,7 +360,10 @@ body main {
     padding: 1em;
 }
 
-.confirmation:hover {
+.confirmation:hover,
+.confirmation a:hover,
+.confirmation span:hover {
+    border-radius: 12px;
     background-color: #FFF;
     color: #EC4899;
 }

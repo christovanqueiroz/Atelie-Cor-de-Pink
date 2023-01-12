@@ -6,7 +6,6 @@ let bagList = document.getElementById('bagList')
 
 let cartQty = document.querySelector('.cartQty span');
 
-
 const openSizeChartModal = document.querySelector('.sizeChartPopup');
 const closeSizeChartModal = document.querySelector('.btnCloseSizeChartModal');
 const sizeChartModal = document.querySelector('.sizeChartModal');
@@ -95,11 +94,9 @@ function addItemToCart(title, price, imageSrc, index) {
     document.querySelector('.emptyBag').style.display = "none";
 }
 
-let messageQty = cartItems.length
-
-let messageTitleContent = `${cartItems[0].title}`
-
-let messageTitle = messageTitleContent.repeat(messageQty)
+let messageTitleContent = `${cartItems[0].title}%20`
+let messagePriceContent = `${cartItems[0].price}%20`
+let message = messageTitleContent+messagePriceContent;
 
 const confirmationButton = document.querySelector('.confirmation')
 
@@ -108,6 +105,8 @@ function renderProductItems() {
     cartItems.forEach(({title, price, imageSrc}, index) => {
         addItemToCart(title, price, imageSrc, index)
     });
+
+    let messageRepeat = message.repeat(cartItems.length)
     
     if(cartItems.length === 0) {
         document.querySelector('.emptyBag').style.display = "flex";
@@ -116,11 +115,15 @@ function renderProductItems() {
         confirmationButton.addEventListener('click', function() {
             if(cartItems.length === 0) alert('Adicione as compras a sacola')
         })
-        
-    } else {
+    } /* else if () {
+        confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
+        confirmationButton.addEventListener('click', function() {
+            if(cartItems.length === 0) alert('Adicione as compras a sacola')
+        })
+    }*/ else { 
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
-        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${messageTitle}" target="_blank">CONFIRMAR PEDIDO</a>`;
+        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${messageRepeat}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
 }
 
