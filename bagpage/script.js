@@ -94,10 +94,6 @@ function addItemToCart(title, price, imageSrc, index) {
     document.querySelector('.emptyBag').style.display = "none";
 }
 
-let messageTitleContent = `${cartItems[0].title}%20`
-let messagePriceContent = `${cartItems[0].price}%20`
-let message = messageTitleContent+messagePriceContent;
-
 const confirmationButton = document.querySelector('.confirmation')
 
 function renderProductItems() {
@@ -106,8 +102,7 @@ function renderProductItems() {
         addItemToCart(title, price, imageSrc, index)
     });
 
-    let messageRepeat = message.repeat(cartItems.length)
-    
+   
     if(cartItems.length === 0) {
         document.querySelector('.emptyBag').style.display = "flex";
         document.querySelector('.cartQty').style.display = 'none';
@@ -115,15 +110,26 @@ function renderProductItems() {
         confirmationButton.addEventListener('click', function() {
             if(cartItems.length === 0) alert('Adicione as compras a sacola')
         })
-    } /* else if () {
-        confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
-        confirmationButton.addEventListener('click', function() {
-            if(cartItems.length === 0) alert('Adicione as compras a sacola')
-        })
-    }*/ else { 
+    } else { 
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
-        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${messageRepeat}" target="_blank">CONFIRMAR PEDIDO</a>`;
+        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20" target="_blank">CONFIRMAR PEDIDO</a>`;
+        
+        let listaDePessoasAprovadas = [
+            JSON.stringify(cartItems),
+        ]
+
+        const enviarEmail = (objetoEmail) => {
+            console.log(`Email para ${objetoEmail.email} com a nota ${objetoEmail.nota}`)
+        };
+
+        let listaDeEmails;
+
+        listaDeEmails = listaDePessoasAprovadas.map((email) => {
+            return { email: email, nota: 10};
+        });
+
+        listaDeEmails.forEach((objetoEmail) => enviarEmail(objetoEmail))
     }
 }
 
