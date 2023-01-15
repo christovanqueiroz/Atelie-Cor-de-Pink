@@ -15,6 +15,8 @@ const body = document.querySelector('body');
 
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+const confirmationButton = document.querySelector('.confirmation')
+
 function addItemToCart(title, price, imageSrc, index) {
     let cartRow = document.createElement('div');
     cartRow.classList.add('cartItem')
@@ -34,26 +36,18 @@ function addItemToCart(title, price, imageSrc, index) {
                     <span>Selecione a cor</span>
 
                     <form class="colors">
-                        <div class="white">
-                            <input type="radio" value="white" name="colors">
-                            <label for="white">Branco</label>
-                        </div>
+                        <input class="white" type="radio" value="white" name="colors">
+                        <label for="white">Branco</label>
 
-                        <div class="black">
-                            <input type="radio" value="black" name="colors">
-                            <label for="black">Preto</label>
-                        </div>
+                        <input class="black" type="radio" value="black" name="colors">
+                        <label for="black">Preto</label>
 
-                        <div class="orange">
-                            <input type="radio" value="orange" name="colors">
-                            <label for="orange">Laranja</label>
-                        </div>
+                        <input class="orange" type="radio" value="orange" name="colors">
+                        <label for="orange">Laranja</label>
 
+                        <input class="pink" type="radio" value="pink" name="colors">
+                        <label for="pink">Rosa</label>
 
-                        <div class="pink">
-                            <input type="radio" value="pink" name="colors">
-                            <label for="pink">Rosa</label>
-                        </div>
                     </form>
                 </div>
 
@@ -61,25 +55,17 @@ function addItemToCart(title, price, imageSrc, index) {
                     <span>Tamanho</span>
 
                     <form class="sizes">
-                        <div>
-                            <input type="radio" value="p" name="sizes">
-                            <label for="p">P</label>
-                        </div>
+                        <input class="p-size" type="radio" value="p" name="sizes">
+                        <label for="p">P</label>
 
-                        <div>
-                            <input type="radio" value="m" name="sizes">
-                            <label for="m">M</label>
-                        </div>
+                        <input class="m-size" type="radio" value="m" name="sizes">
+                        <label for="m">M</label>
 
-                        <div>
-                            <input type="radio" value="g" name="sizes">
-                            <label for="g">G</label>
-                        </div>
+                        <input class="g-size" type="radio" value="g" name="sizes">
+                        <label for="g">G</label>
 
-                        <div>
-                            <input type="radio"  value="gg" name="sizes">
-                            <label for="gg">GG</label>
-                        </div>
+                        <input class="gg-size" type="radio"  value="gg" name="sizes">
+                        <label for="gg">GG</label>
                     </form>
                 </div>
 
@@ -93,8 +79,6 @@ function addItemToCart(title, price, imageSrc, index) {
     bagList.append(cartRow)
     document.querySelector('.emptyBag').style.display = "none";
 }
-
-const confirmationButton = document.querySelector('.confirmation')
 
 function renderProductItems() {
     bagList.innerHTML = ''
@@ -111,25 +95,69 @@ function renderProductItems() {
             if(cartItems.length === 0) alert('Adicione as compras a sacola')
         })
     } else { 
+        let white = document.querySelectorAll(".white")
+        let black = document.querySelectorAll(".black")
+        let orange = document.querySelectorAll(".orange")
+        let pink = document.querySelectorAll(".pink")
+
+        white.forEach(color => {
+            color.addEventListener('change', function() {
+                white = {
+                    color: color.value
+                }
+
+                cartItems.forEach(item => {
+                    const final = Object.assign(item,white)
+                    console.log(final)
+                })
+            })
+        })
+        
+        black.forEach(color => {
+            color.addEventListener('change', function() {
+                black = {
+                    color: color.value
+                }
+                cartItems.forEach(item => {
+                    const final = Object.assign(item,black)
+                    console.log(final)
+                })
+            })
+        })
+
+        orange.forEach(color => {
+            color.addEventListener('change', function() {
+                orange = {
+                    color: color.value
+                }
+
+                cartItems.forEach(item => {
+                    const final = Object.assign(item,orange)
+                    console.log(final)
+                })
+            })
+        })
+
+        pink.forEach(color => {
+            color.addEventListener('change', function() {
+                pink = {
+                    color: color.value
+                }
+
+                cartItems.forEach(item => {
+                    const final = Object.assign(item,pink)
+                    console.log(final)
+                })
+            })
+        })
+
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
-        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20" target="_blank">CONFIRMAR PEDIDO</a>`;
+              
+        const selectedItems = cartItems.map(item => `${item.title} + ${item.price}`)
+        const selectedItemsText = selectedItems.join(', ')
         
-        let listaDePessoasAprovadas = [
-            JSON.stringify(cartItems),
-        ]
-
-        const enviarEmail = (objetoEmail) => {
-            console.log(`Email para ${objetoEmail.email} com a nota ${objetoEmail.nota}`)
-        };
-
-        let listaDeEmails;
-
-        listaDeEmails = listaDePessoasAprovadas.map((email) => {
-            return { email: email, nota: 10};
-        });
-
-        listaDeEmails.forEach((objetoEmail) => enviarEmail(objetoEmail))
+        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
 }
 
