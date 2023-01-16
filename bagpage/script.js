@@ -36,17 +36,17 @@ function addItemToCart(title, price, imageSrc, index) {
                     <span>Selecione a cor</span>
 
                     <form class="colors">
-                        <input class="white" type="radio" value="white" name="colors">
-                        <label for="white">Branco</label>
+                        <input onchange="handleChangeColor(${index}, 'branco')" class="white" type="radio" value="branco" name="colors">
+                        <label for="branco">Branco</label>
 
-                        <input class="black" type="radio" value="black" name="colors">
-                        <label for="black">Preto</label>
+                        <input onchange="handleChangeColor(${index}, 'preto')" class="black" type="radio" value="preto" name="colors">
+                        <label for="preto">Preto</label>
 
-                        <input class="orange" type="radio" value="orange" name="colors">
-                        <label for="orange">Laranja</label>
+                        <input onchange="handleChangeColor(${index}, 'laranja')" class="orange" type="radio" value="laranja" name="colors">
+                        <label for="laranja">Laranja</label>
 
-                        <input class="pink" type="radio" value="pink" name="colors">
-                        <label for="pink">Rosa</label>
+                        <input onchange="handleChangeColor(${index}, 'rosa')" class="pink" type="radio" value="rosa" name="colors">
+                        <label for="rosa">Rosa</label>
 
                     </form>
                 </div>
@@ -95,70 +95,20 @@ function renderProductItems() {
             if(cartItems.length === 0) alert('Adicione as compras a sacola')
         })
     } else { 
-        let white = document.querySelectorAll(".white")
-        let black = document.querySelectorAll(".black")
-        let orange = document.querySelectorAll(".orange")
-        let pink = document.querySelectorAll(".pink")
-
-        white.forEach(color => {
-            color.addEventListener('change', function() {
-                white = {
-                    color: color.value
-                }
-
-                cartItems.forEach(item => {
-                    const final = Object.assign(item,white)
-                    console.log(final)
-                })
-            })
-        })
-        
-        black.forEach(color => {
-            color.addEventListener('change', function() {
-                black = {
-                    color: color.value
-                }
-                cartItems.forEach(item => {
-                    const final = Object.assign(item,black)
-                    console.log(final)
-                })
-            })
-        })
-
-        orange.forEach(color => {
-            color.addEventListener('change', function() {
-                orange = {
-                    color: color.value
-                }
-
-                cartItems.forEach(item => {
-                    const final = Object.assign(item,orange)
-                    console.log(final)
-                })
-            })
-        })
-
-        pink.forEach(color => {
-            color.addEventListener('change', function() {
-                pink = {
-                    color: color.value
-                }
-
-                cartItems.forEach(item => {
-                    const final = Object.assign(item,pink)
-                    console.log(final)
-                })
-            })
-        })
-
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
-              
+
         const selectedItems = cartItems.map(item => `${item.title} + ${item.price}`)
         const selectedItemsText = selectedItems.join(', ')
-        
+
         confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
+}
+
+const colors = document.getElementsByName("colors")
+
+function handleChangeColor(index, colors) {
+    console.log(index)
 }
 
 function removeItem(index) {
