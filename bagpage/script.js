@@ -80,6 +80,12 @@ function addItemToCart(title, price, imageSrc, index) {
     document.querySelector('.emptyBag').style.display = "none";
 }
 
+function handleChangeColor(index, color) {
+    Object.assign(cartItems[index], {color})
+    console.log(cartItems)
+    renderProductItems()
+}
+
 function renderProductItems() {
     bagList.innerHTML = ''
     cartItems.forEach(({title, price, imageSrc}, index) => {
@@ -92,23 +98,17 @@ function renderProductItems() {
         document.querySelector('.cartQty').style.display = 'none';
         confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
         confirmationButton.addEventListener('click', function() {
-            if(cartItems.length === 0) alert('Adicione as compras a sacola')
+            alert('Adicione as compras a sacola')
         })
     } else { 
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
 
-        const selectedItems = cartItems.map(item => `${item.title} + ${item.price}`)
+        const selectedItems = cartItems.map(item => `${item.title} + ${item.color}`)
         const selectedItemsText = selectedItems.join(', ')
 
         confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
-}
-
-const colors = document.getElementsByName("colors")
-
-function handleChangeColor(index, colors) {
-    console.log(index)
 }
 
 function removeItem(index) {
