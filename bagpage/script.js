@@ -36,17 +36,17 @@ function addItemToCart(title, price, imageSrc, index) {
                     <span>Selecione a cor</span>
 
                     <form class="colors">
-                        <input onchange="handleChangeColor(${index}, 'branco')" class="white" type="radio" value="branco" name="colors">
-                        <label for="branco">Branco</label>
+                        <input onchange="handleChangeColor(${index}, 'Branco')" class="white" type="radio" value="white" name="colors">
+                        <label for="white">Branco</label>
 
-                        <input onchange="handleChangeColor(${index}, 'preto')" class="black" type="radio" value="preto" name="colors">
-                        <label for="preto">Preto</label>
+                        <input onchange="handleChangeColor(${index}, 'Preto')" class="black" type="radio" value="black" name="colors">
+                        <label for="black">Preto</label>
 
-                        <input onchange="handleChangeColor(${index}, 'laranja')" class="orange" type="radio" value="laranja" name="colors">
-                        <label for="laranja">Laranja</label>
+                        <input onchange="handleChangeColor(${index}, 'Laranja')" class="orange" type="radio" value="orange" name="colors">
+                        <label for="orange">Laranja</label>
 
-                        <input onchange="handleChangeColor(${index}, 'rosa')" class="pink" type="radio" value="rosa" name="colors">
-                        <label for="rosa">Rosa</label>
+                        <input onchange="handleChangeColor(${index}, 'Rosa')" class="pink" type="radio" value="pink" name="colors">
+                        <label for="pink">Rosa</label>
 
                     </form>
                 </div>
@@ -55,17 +55,17 @@ function addItemToCart(title, price, imageSrc, index) {
                     <span>Tamanho</span>
 
                     <form class="sizes">
-                        <input class="p-size" type="radio" value="p" name="sizes">
-                        <label for="p">P</label>
+                        <input onchange="handleChangeSize(${index}, 'P')" class="p-size" type="radio" value="p-size" name="sizes">
+                        <label for="p-size">P</label>
 
-                        <input class="m-size" type="radio" value="m" name="sizes">
-                        <label for="m">M</label>
+                        <input onchange="handleChangeSize(${index}, 'M')" class="m-size" type="radio" value="m-size" name="sizes">
+                        <label for="m-size">M</label>
 
-                        <input class="g-size" type="radio" value="g" name="sizes">
-                        <label for="g">G</label>
+                        <input onchange="handleChangeSize(${index}, 'G')" class="g-size" type="radio" value="g-size" name="sizes">
+                        <label for="g-size">G</label>
 
-                        <input class="gg-size" type="radio"  value="gg" name="sizes">
-                        <label for="gg">GG</label>
+                        <input onchange="handleChangeSize(${index}, 'GG')" class="gg-size" type="radio"  value="gg-size" name="sizes">
+                        <label for="gg-size">GG</label>
                     </form>
                 </div>
 
@@ -82,8 +82,18 @@ function addItemToCart(title, price, imageSrc, index) {
 
 function handleChangeColor(index, color) {
     Object.assign(cartItems[index], {color})
-    console.log(cartItems)
-    renderProductItems()
+    const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    const selectedItemsText = selectedItems.join(', ')
+    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
+}
+
+function handleChangeSize(index, size) {
+    Object.assign(cartItems[index], {size})
+    const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    const selectedItemsText = selectedItems.join(', ')
+    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
 }
 
 function renderProductItems() {
@@ -92,7 +102,6 @@ function renderProductItems() {
         addItemToCart(title, price, imageSrc, index)
     });
 
-   
     if(cartItems.length === 0) {
         document.querySelector('.emptyBag').style.display = "flex";
         document.querySelector('.cartQty').style.display = 'none';
@@ -100,14 +109,22 @@ function renderProductItems() {
         confirmationButton.addEventListener('click', function() {
             alert('Adicione as compras a sacola')
         })
-    } else { 
+    } else {
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
+        confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
 
-        const selectedItems = cartItems.map(item => `${item.title} + ${item.color}`)
+        const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
         const selectedItemsText = selectedItems.join(', ')
 
-        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
+        confirmationButton.addEventListener('click', function() {
+            if(cartItems.color === undefined, cartItems.size === undefined) {
+                alert('Selecione a cor e tamanho da peça')
+                confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
+            } else {        
+                confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
+            } 
+        })
     }
 }
 

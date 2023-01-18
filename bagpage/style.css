@@ -176,6 +176,7 @@ body main {
                 "title price" 20%
                 "selectcolor selectsizes" 70%
                 "remover remover" 10%;
+    align-items: center;
 }
 
 .bag .cartItem .info > div {
@@ -205,8 +206,8 @@ body main {
 .bag .cartItem .info .selectcolor .colors {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 1em;
     row-gap: 0.5em;
+    place-items: center;
 }
 
 .bag .cartItem .info .selectcolor .colors > div {
@@ -215,10 +216,10 @@ body main {
     gap: 0.35em;
 }
 
-.selectcolor .colors .white #white,
-.selectcolor .colors .black #black,
-.selectcolor .colors .orange #orange,
-.selectcolor .colors .pink #pink {
+.selectcolor .colors .white,
+.selectcolor .colors .black,
+.selectcolor .colors .orange,
+.selectcolor .colors .pink {
     height: 1.5em;
     width: 1.5em;
     border-radius: 100%;
@@ -226,32 +227,32 @@ body main {
     margin-bottom: 0.125em;
 }
 
-.white #white:hover,
-.black #black:hover,
-.orange #orange:hover,
-.pink #pink:hover {
+.white:hover,
+.black:hover,
+.orange:hover,
+.pink:hover {
     transform: scale(1.125);
     transition: all .3s;
     cursor: pointer;
 }
 
-.white #white:checked + label {
+.white:checked + label {
     text-decoration: underline;
 }
 
-.black #black:checked + label {
+.black:checked + label {
     color: #000;
     font-weight: bold;
     text-decoration: underline;
 }
 
-.orange #orange:checked + label {
+.orange:checked + label {
     color: #db732d;
     font-weight: bold;
     text-decoration: underline;    
 }
 
-.pink #pink:checked + label {
+.pink:checked + label {
     color: #EC4899;
     font-weight: bold;
     text-decoration: underline;    
@@ -268,8 +269,8 @@ body main {
 .bag .cartItem .info .selectsizes .sizes {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 1em;
     row-gap: 0.5em;
+    place-items: center;
 }
 .bag .cartItem .info .selectsizes .sizes div {
     display: flex;
@@ -278,10 +279,10 @@ body main {
     column-gap: 0.35em;
 }
 
-#p,
-#m,
-#g,
-#gg {
+.p-size,
+.m-size,
+.g-size,
+.gg-size {
     height: 1.5em;
     width: 1.5em;
     border-radius: 100%;
@@ -289,10 +290,10 @@ body main {
     margin-bottom: 0.125em;
 }
 
-#p:hover,
-#m:hover,
-#g:hover,
-#gg:hover {
+.p-size:hover,
+.m-size:hover,
+.g-size:hover,
+.gg-size:hover {
     transform: scale(1.125);
     transition: all .3s;
     cursor: pointer;
@@ -727,15 +728,14 @@ body main .sizes > div {
         flex-direction: column;
         align-items: center;
         margin: 0;
-        border: 1px solid #EC4899;
     }
 
     .bag .cartItem .info .title,
     .bag .cartItem .info .price,
     .bag .cartItem .info .selectcolor,
     .bag .cartItem .info .selectsizes {
-        border: none;
         text-align: center;
+        width: 100%;
     }
 }
 
@@ -771,6 +771,7 @@ body main .sizes > div {
     .bag .cartItem .info .selectcolor .colors,
     .bag .cartItem .info .selectsizes .sizes {
         display: flex;
+        column-gap: 0.5em;
     }
 
     .confirmation {
