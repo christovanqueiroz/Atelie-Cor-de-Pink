@@ -157,20 +157,22 @@ body main {
     padding: .5em 1.5em .5em 1.5em;
     flex-direction: row;
     border-bottom: 1px solid #EC4899;
+    align-items: flex-start;
 }
 
 .bag .cartItem > img {
+    margin-top: 0.375em;
     border: 1px solid #EC4899;
     border-radius: 12px;
-    min-width: 145px;
-    max-width: 145px;
-    min-height: 180px;
-    max-height: 180px;
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 200px;
+    max-height: 200px;
 }
 
 .bag .cartItem .info {
     display: grid;
-    margin-left: 2em;
+    margin-left: 1.5em;
     width: 100%;
     grid-template: 
                 "title price" 20%
@@ -187,12 +189,17 @@ body main {
     display: flex;
     grid-area: title;
     font-weight: 600;
+    background-color: #EC4899;
+    color: #FFF;
+    font-size: 1.175em;
+    border-radius: 2px;
 }
 
 .bag .cartItem .info .price {
     display: flex;
     justify-content: center;
     grid-area: price;
+    color: #EC4899;
 }
 
 .bag .cartItem .info .selectcolor {
@@ -201,6 +208,12 @@ body main {
     align-items: center;
     grid-area: selectcolor;
     justify-content: space-around;
+}
+
+
+.bag .cartItem .info .selectcolor > span {
+    color: #EC4899;
+    font-weight: 500;
 }
 
 .bag .cartItem .info .selectcolor .colors {
@@ -266,6 +279,11 @@ body main {
     justify-content: space-around;
 }
 
+.bag .cartItem .info .selectsizes > span {
+    color: #EC4899;
+    font-weight: 500;
+}
+
 .bag .cartItem .info .selectsizes .sizes {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -321,7 +339,6 @@ body main {
 }
 
 .bag .cartItem .info .remove:hover {
-    color: #ff0000;
     text-decoration: underline;
 }
 

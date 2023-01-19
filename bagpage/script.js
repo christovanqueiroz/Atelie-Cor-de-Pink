@@ -117,14 +117,7 @@ function renderProductItems() {
         const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
         const selectedItemsText = selectedItems.join(', ')
 
-        confirmationButton.addEventListener('click', function() {
-            if(cartItems.color === undefined, cartItems.size === undefined) {
-                alert('Selecione a cor e tamanho da peça')
-                confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
-            } else {        
-                confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
-            } 
-        })
+         confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
 }
 
