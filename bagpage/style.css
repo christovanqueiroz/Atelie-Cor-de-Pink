@@ -67,11 +67,11 @@ body header .links nav ul li:nth-child(2) a span {
 
 body header .links nav ul li img:hover{
     transform: scale(1.1);
-    transition: .75s;
+    transition: transform .75s;
 }
 
 body header .links nav ul li a span:hover {
-    text-decoration: underline;
+    text-decoration: underline
 }
 
 body header .links nav ul li .cartQty {
@@ -218,57 +218,37 @@ body main {
 
 .bag .cartItem .info .selectcolor .colors {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 30% 70%;
+    column-gap: 0.25em;
     row-gap: 0.5em;
-    place-items: center;
-}
-
-.bag .cartItem .info .selectcolor .colors > div {
-    display: flex;
+    justify-items: left;
     align-items: center;
-    gap: 0.35em;
 }
 
-.selectcolor .colors .white,
-.selectcolor .colors .black,
-.selectcolor .colors .orange,
-.selectcolor .colors .pink {
+label {
+    color: #000000cc;
+}
+
+.white,
+.black,
+.orange,
+.pink {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #ddd;
+    border-radius: 1em;
     height: 1.5em;
     width: 1.5em;
-    border-radius: 100%;
-    border: 1px solid #000;
-    margin-bottom: 0.125em;
-}
-
-.white:hover,
-.black:hover,
-.orange:hover,
-.pink:hover {
-    transform: scale(1.125);
-    transition: all .3s;
+    border: 2px solid #00000035;
     cursor: pointer;
 }
 
-.white:checked + label {
-    text-decoration: underline;
-}
-
-.black:checked + label {
-    color: #000;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.orange:checked + label {
-    color: #db732d;
-    font-weight: bold;
-    text-decoration: underline;    
-}
-
-.pink:checked + label {
-    color: #EC4899;
-    font-weight: bold;
-    text-decoration: underline;    
+.white:checked,
+.black:checked,
+.orange:checked,
+.pink:checked{
+    background-color: #EC4899;
+    border: 1px solid #00000035;
 }
 
 .bag .cartItem .info .selectsizes {
@@ -286,39 +266,33 @@ body main {
 
 .bag .cartItem .info .selectsizes .sizes {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
+    column-gap: 0.25em;
     row-gap: 0.5em;
-    place-items: center;
-}
-.bag .cartItem .info .selectsizes .sizes div {
-    display: flex;
-    flex-direction: row;
+    justify-items: left;
     align-items: center;
-    column-gap: 0.35em;
 }
 
 .p-size,
 .m-size,
 .g-size,
 .gg-size {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #ddd;
+    border-radius: 1em;
     height: 1.5em;
     width: 1.5em;
-    border-radius: 100%;
-    border: 1px solid #000;
-    margin-bottom: 0.125em;
-}
-
-.p-size:hover,
-.m-size:hover,
-.g-size:hover,
-.gg-size:hover {
-    transform: scale(1.125);
-    transition: all .3s;
+    border: 2px solid #00000035;
     cursor: pointer;
 }
 
-.sizes input:checked + label {
-    font-weight: bold;
+.p-size:checked,
+.m-size:checked,
+.g-size:checked,
+.gg-size:checked{
+    background-color: #EC4899;
+    border: 1px solid #00000035;
 }
 
 .bag .cartItem .info .remove {
@@ -638,14 +612,15 @@ body main .sizeChartHead {
     height: fit-content;
     column-gap: 5em;
     margin-top: 0.5em;
+    cursor:grab;
 }
 
 body main .sizeChartHead .btnCloseSizeChartModal {
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
     display: flex;
     border-radius: 100%;
-    margin-left: 0.3em;
+    margin-left: 0.75em;
 }
 
 body main .sizeChartHead .btnCloseSizeChartModal button {
@@ -711,7 +686,7 @@ body main .sizes > div {
     flex-direction: column;
 }
 
-@media (max-width:1008px) {
+@media (max-width:945px) {
     body header {
         justify-content: space-evenly;
     }
@@ -731,20 +706,24 @@ body main .sizes > div {
     body header .links nav ul {
         gap: 1em;
     }
-}
+    
+    .bag {
+        width: 75%;
+    }
 
-@media (max-width:945px) {
+    .confirmation {
+        width: 75%;
+    }
+
     .bag .cartItem {
         flex-direction: column;
         align-items: center;
         gap: 1em;
     }
-    
-    .bag .cartItem .info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
+
+    .bag .cartItem .info .selectcolor .colors,
+    .bag .cartItem .info .selectsizes .sizes {
+        row-gap: 0.15em;
     }
 
     .bag .cartItem .info .title,
@@ -776,33 +755,27 @@ body main .sizes > div {
         gap: 1em;
     }
 
+    .bag {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .bag .cartItem .info {
+        margin: 0;
+    }
+
     body header .links nav ul li {
         min-width: 30px;
         width: 2.5em;
     }
 
-    .bag {
-        width: 100%;
-    }
-
-    .bag .cartItem .info .selectcolor .colors,
-    .bag .cartItem .info .selectsizes .sizes {
+    .bag .cartItem .info {
         display: flex;
-        column-gap: 0.5em;
-    }
-
-    .confirmation {
-        width: 75%;
+        flex-direction: column;
     }
 }
 
 @media (max-width:400px) {
-    .bag .cartItem .info .selectcolor .colors,
-    .bag .cartItem .info .selectsizes .sizes {
-        flex-direction: column;
-        row-gap: 0.15em;
-    }
-
     body footer .lastlinks ul {
         gap: 1em;
     }
@@ -810,7 +783,21 @@ body main .sizes > div {
 
 @media (max-width:250px) {
     body header .links nav ul {
-        gap: 0.25em;
+        gap: 0;
+    }
+    body header .links nav ul li {
+        gap: 0;
+    }
+
+    body header .links nav ul li a img{
+        min-width: 30px;
+        min-height: 30px;
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .bagHead {
+        font-size: .75em;
     }
     
     body footer .lastlinks ul {

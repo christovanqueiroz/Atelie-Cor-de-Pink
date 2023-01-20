@@ -604,6 +604,11 @@ body main .sizes > div {
         min-width: 30px;
         width: 2.5em;
     }
+
+    body header .links nav ul li a img {
+        width: 1em;
+        min-width: 20px;
+    }
 }
 
 @media (max-width:400px) {

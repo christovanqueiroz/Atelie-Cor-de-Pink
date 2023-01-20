@@ -36,22 +36,17 @@ function addItemToCart(title, price, imageSrc, index) {
                     <span>Selecione a cor</span>
 
                     <form class="colors">
-                        <label for="white">
-                            <input onchange="handleChangeColor(${index}, 'Branco')" class="white" type="radio" value="white" name="colors"> Branco
-                        </label>
+                        <input onchange="handleChangeColor(${index}, 'Branco')" class="white" type="radio" value="white" name="colors">
+                        <label for="white">Branco</label>
 
-                        <label for="black">
-                            <input onchange="handleChangeColor(${index}, 'Preto')" class="black" type="radio" value="black" name="colors"> Preto
-                        </label>
+                        <input onchange="handleChangeColor(${index}, 'Preto')" class="black" type="radio" value="black" name="colors">
+                        <label for="black">Preto</label>
 
-                        <label for="orange">
-                            <input onchange="handleChangeColor(${index}, 'Laranja')" class="orange" type="radio" value="orange" name="colors"> Laranja
-                        </label>
+                        <input onchange="handleChangeColor(${index}, 'Laranja')" class="orange" type="radio" value="orange" name="colors">
+                        <label for="orange">Laranja</label>
 
-                        <label for="pink">
-                            <input onchange="handleChangeColor(${index}, 'Rosa')" class="pink" type="radio" value="pink" name="colors"> Rosa
-                        </label>
-
+                        <input onchange="handleChangeColor(${index}, 'Rosa')" class="pink" type="radio" value="pink" name="colors">
+                        <label for="pink">Rosa</label>
                     </form>
                 </div>
 
