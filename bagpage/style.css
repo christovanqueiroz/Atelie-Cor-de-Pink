@@ -8,6 +8,9 @@
 body {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FDF2F8;
 }
 
 body header {
@@ -100,7 +103,6 @@ body header .links nav ul li .cartQty span {
 }
 
 body main {
-    background-color: #FDF2F8;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,7 +163,7 @@ body main {
 }
 
 .bag .cartItem > img {
-    margin-top: 0.375em;
+    margin-top: 0.75em;
     border: 1px solid #EC4899;
     border-radius: 12px;
     min-width: 150px;
@@ -225,8 +227,10 @@ body main {
     align-items: center;
 }
 
-label {
+.info label {
     color: #000000cc;
+    text-align: center;
+    padding-top: .15em;
 }
 
 .white,
@@ -366,6 +370,7 @@ body footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 body footer .lastlinks ul {
@@ -487,6 +492,7 @@ body main .loginForm form fieldset label {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 body main .loginForm form fieldset label div {
@@ -721,6 +727,10 @@ body main .sizes > div {
         gap: 1em;
     }
 
+    .bag .cartItem > img {
+        margin-top: 0;
+    }
+
     .bag .cartItem .info .selectcolor .colors,
     .bag .cartItem .info .selectsizes .sizes {
         row-gap: 0.15em;
@@ -748,11 +758,16 @@ body main .sizes > div {
     }
 }
 
-@media (max-width:510px) {
+@media (max-width:500px) {
     body header {
         justify-content: space-between;
         padding: 0 1em;
         gap: 1em;
+    }
+    
+    body header .links nav ul li {
+        min-width: 30px;
+        width: 2.5em;
     }
 
     .bag {
@@ -762,11 +777,6 @@ body main .sizes > div {
 
     .bag .cartItem .info {
         margin: 0;
-    }
-
-    body header .links nav ul li {
-        min-width: 30px;
-        width: 2.5em;
     }
 
     .bag .cartItem .info {
@@ -781,26 +791,48 @@ body main .sizes > div {
     }
 }
 
-@media (max-width:250px) {
+@media (max-width:256px) {
+    body header {
+        flex-direction:column;
+        gap: 0;
+    }
+
     body header .links nav ul {
         gap: 0;
     }
+
     body header .links nav ul li {
-        gap: 0;
+        height: 3em;
+        max-height: 3em;
     }
 
     body header .links nav ul li a img{
-        min-width: 30px;
-        min-height: 30px;
-        width: 1.5em;
-        height: 1.5em;
+        height: 2em;
+        width: 2em;
     }
 
-    .bagHead {
-        font-size: .75em;
+    body header .links nav ul li .cartQty {
+        top: 54%;
+        width: 30%;
+        height: 30%;
+        max-width: 26px;
+        padding: 0.5em;
+    }
+
+    body footer .lastlinks ul li a img {
+        width: 2em;
     }
     
     body footer .lastlinks ul {
-        gap: 0;
+        gap: .175em;
+    }
+
+    .bagHead {
+        font-size: .675em;
+    }
+
+    .bag .emptyBag span {
+        font-size: .75em;
+        text-align: center;
     }
 }

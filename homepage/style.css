@@ -8,6 +8,7 @@
 body {
     height: 100%;
     width: 100%;
+    background-color: #FDF2F8;
 }
 
 body header {
@@ -67,7 +68,7 @@ body header .links nav ul li:nth-child(2) a span {
 
 body header .links nav ul li img:hover{
     transform: scale(1.1);
-    transition: .75s;
+    transition: .3s;
 }
 
 body header .links nav ul li a span:hover {
@@ -100,7 +101,6 @@ body header .links nav ul li .cartQty span {
 }
 
 body main {
-    background-color: #FDF2F8;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,7 +160,7 @@ body main .products ul li article .product-image img {
     height: 100%;
     min-height: 300px;
     max-height: 300px;
-    transition: .35s ease-in;
+    transition: .3s ease-in;
 }
 
 body main .products ul li article .item {
@@ -604,11 +604,6 @@ body main .sizes > div {
         min-width: 30px;
         width: 2.5em;
     }
-
-    body header .links nav ul li a img {
-        width: 1em;
-        min-width: 20px;
-    }
 }
 
 @media (max-width:400px) {
@@ -617,12 +612,74 @@ body main .sizes > div {
     }
 }
 
-@media (max-width:250px) {
+@media (max-width:256px) {
+    body header {
+        flex-direction:column;
+        gap: 0;
+    }
+
     body header .links nav ul {
-        gap: 0.25em;
+        gap: 0;
+    }
+
+    body header .links nav ul li {
+        height: 3em;
+        max-height: 3em;
+    }
+
+    body header .links nav ul li a img{
+        height: 2em;
+        width: 2em;
+    }
+
+    body header .links nav ul li .cartQty {
+        top: 54%;
+        width: 30%;
+        height: 30%;
+        max-width: 26px;
+        padding: 0.5em;
+    }
+
+    body main .head h1 {
+        font-size: 1.5em;
+    }
+
+    body main .products ul li {
+        min-width: 140px;
+        max-width: 150px;
+    }
+    
+    body main .products ul li article .product-image img {
+        min-height: 170px;
+        max-height: 180px;
+    }
+    
+    body main .products ul li article .item {
+        height: 1.85em;
+        font-size: 1em;
+    }
+    
+    body main .products ul li article .price {
+        height: 1.5em;
+        font-size: 1em;
+    }
+    
+    body main .products ul .product .addToCartButtons {
+        transform: translate(17%, -250%);
+        height: 3.5em;
+        width: 6.5em;
+    }
+    
+    body main .products ul li .addToCartButtons h3 {
+        font-size: .8em;
+        padding-top: 0.85em;
+    }
+
+    body footer .lastlinks ul li a img {
+        width: 2em;
     }
     
     body footer .lastlinks ul {
-        gap: 0;
+        gap: .175em;
     }
 }

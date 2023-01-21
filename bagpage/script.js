@@ -102,6 +102,9 @@ function renderProductItems() {
     });
 
     if(cartItems.length === 0) {
+        document.querySelector('footer').style.position = "fixed";
+        document.querySelector('footer').style.left = "0";
+        document.querySelector('footer').style.bottom = "0";
         document.querySelector('.emptyBag').style.display = "flex";
         document.querySelector('.cartQty').style.display = 'none';
         confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
