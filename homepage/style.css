@@ -570,6 +570,30 @@ body main .sizes > div {
     body header .links nav ul {
         gap: 1em;
     }
+    
+    body main .sizeChartHead {
+        column-gap: 3.5em;
+    }
+
+    body main .sizeChartModalVisible h2 {
+        font-size: 1.175em;
+    }
+
+    body main .sizeChartModalVisible .topAndBrallet,
+    body main .sizeChartModalVisible .underwear {
+        font-size: .85em;
+        padding: 0 1em 0 1em;
+    }
+    
+    body main .sizeChartModalVisible .topAndBrallet .sizes,
+    body main .sizeChartModalVisible .underwear .sizes {
+        gap: .7em;
+    }
+
+    body main .sizeChartModalVisible .topAndBrallet .sizes ul li,
+    body main .sizeChartModalVisible .underwear .sizes ul li {
+        font-size: .85em;
+    }
 }
 
 @media (max-width:745px) {
