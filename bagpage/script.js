@@ -17,6 +17,10 @@ const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 const confirmationButton = document.querySelector('.confirmation')
 
+function changeAddress() {
+    const address = document.getElementById("address")
+}
+
 function addItemToCart(title, price, imageSrc, index) {
     let cartRow = document.createElement('div');
     cartRow.classList.add('cartItem')
@@ -84,7 +88,7 @@ function handleChangeColor(index, color) {
     const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     const selectedItemsText = selectedItems.join(', ')
-    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
+    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}%20${address.value}" target="_blank">CONFIRMAR PEDIDO</a>`;
 }
 
 function handleChangeSize(index, size) {
@@ -92,7 +96,7 @@ function handleChangeSize(index, size) {
     const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     const selectedItemsText = selectedItems.join(', ')
-    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
+    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}%20${address.value}" target="_blank">CONFIRMAR PEDIDO</a>`;
 }
 
 function renderProductItems() {
@@ -114,12 +118,11 @@ function renderProductItems() {
     } else {
         document.querySelector('.cartQty').style.display = 'flex';
         cartQty.innerHTML = cartItems.length;
-        confirmationButton.innerHTML = '<span>CONFIRMAR PEDIDO</span>';
 
         const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
         const selectedItemsText = selectedItems.join(', ')
 
-        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
+        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}%20${address.value}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
 }
 
