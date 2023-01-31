@@ -320,6 +320,33 @@ body main {
     text-decoration: underline;
 }
 
+.address {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    gap: .75em;
+    width: 100%;
+}
+
+.address h1 {
+    font-size: 1.25em;
+    color: #000000cc;
+}
+
+.address input {
+    padding: .5em;
+    border: 1px solid #EC4899;
+    border-radius: 4px;
+    color: #000000cc;
+    font-size: .875em;
+    width: 15%;
+}
+
+.address input:focus {
+    border: 1px solid #000000cc;
+    outline: none;
+}
+
 .confirmation {
     margin-bottom: 12px;
     z-index: 1;

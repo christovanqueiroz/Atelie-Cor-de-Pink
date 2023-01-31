@@ -17,10 +17,6 @@ const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 const confirmationButton = document.querySelector('.confirmation')
 
-function changeAddress() {
-    const address = document.getElementById("address")
-}
-
 function addItemToCart(title, price, imageSrc, index) {
     let cartRow = document.createElement('div');
     cartRow.classList.add('cartItem')
@@ -86,9 +82,10 @@ function addItemToCart(title, price, imageSrc, index) {
 function handleChangeColor(index, color) {
     Object.assign(cartItems[index], {color})
     const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
+
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     const selectedItemsText = selectedItems.join(', ')
-    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}%20${address.value}" target="_blank">CONFIRMAR PEDIDO</a>`;
+    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
 }
 
 function handleChangeSize(index, size) {
@@ -96,8 +93,18 @@ function handleChangeSize(index, size) {
     const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     const selectedItemsText = selectedItems.join(', ')
-    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}%20${address.value}" target="_blank">CONFIRMAR PEDIDO</a>`;
+    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
 }
+
+const searchCep = async() => {
+    const cep = document.getElementById('cep').value;
+    const url = `https://viacep.com.br/ws/${cep}/json/`
+    const data = await fetch(url)
+    const address = await data.json()
+    console.log(address.logradouro, address.bairro, address.localidade)
+}
+
+document.getElementById('cep').addEventListener('focusout', searchCep);
 
 function renderProductItems() {
     bagList.innerHTML = ''
@@ -120,9 +127,10 @@ function renderProductItems() {
         cartQty.innerHTML = cartItems.length;
 
         const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
+
         const selectedItemsText = selectedItems.join(', ')
 
-        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}%20${address.value}" target="_blank">CONFIRMAR PEDIDO</a>`;
+        confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}" target="_blank">CONFIRMAR PEDIDO</a>`;
     }
 }
 
