@@ -15,6 +15,11 @@ const body = document.querySelector('body');
 
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+let cep;
+let url;
+let data;
+let address;
+
 const confirmationButton = document.querySelector('.confirmation')
 
 function addItemToCart(title, price, imageSrc, index) {
@@ -97,11 +102,15 @@ function handleChangeSize(index, size) {
 }
 
 const searchCep = async() => {
-    const cep = document.getElementById('cep').value;
-    const url = `https://viacep.com.br/ws/${cep}/json/`
-    const data = await fetch(url)
-    const address = await data.json()
-    console.log(address.logradouro, address.bairro, address.localidade)
+    cep = document.getElementById('cep').value;
+    url = `https://viacep.com.br/ws/${cep}/json/`
+    data = await fetch(url)
+    address = await data.json()
+    console.log(address)
+    const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    const selectedItemsText = selectedItems.join(', ')
+    confirmationButton.innerHTML = `<a href="https://wa.me/5551989512183?text=Segue%20meu%20pedido:%20${selectedItemsText}%20Endereço:%20${address.logradouro},%20${address.bairro},%20${address.localidade}" target="_blank">CONFIRMAR PEDIDO</a>`;
 }
 
 document.getElementById('cep').addEventListener('focusout', searchCep);
