@@ -106,7 +106,6 @@ const searchCep = async() => {
     url = `https://viacep.com.br/ws/${cep}/json/`
     data = await fetch(url)
     address = await data.json()
-    console.log(address)
     const selectedItems = cartItems.map(item => `${item.title} + ${item.color} + ${item.size}`)
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     const selectedItemsText = selectedItems.join(', ')

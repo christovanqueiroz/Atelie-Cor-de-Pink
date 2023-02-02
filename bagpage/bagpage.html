@@ -78,7 +78,7 @@
 
         <div class="address">
             <h1>Digite seu CEP:</h1>
-            <input type="text" name="cep" id="cep" maxlength="8">
+            <input type="number" name="cep" id="cep" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==8) return false;"/>
         </div>
 
         <div class="confirmation">

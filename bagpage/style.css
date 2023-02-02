@@ -333,7 +333,7 @@ body main {
     color: #000000cc;
 }
 
-.address input {
+.address #cep {
     padding: .5em;
     border: 1px solid #EC4899;
     border-radius: 4px;
@@ -342,7 +342,17 @@ body main {
     width: 15%;
 }
 
-.address input:focus {
+.address #cep::-webkit-outer-spin-button,
+.address #cep::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+.address #cep:focus {
     border: 1px solid #000000cc;
     outline: none;
 }
@@ -815,6 +825,10 @@ body main .sizes > div {
 @media (max-width:400px) {
     body footer .lastlinks ul {
         gap: 1em;
+    }
+
+    .address #cep {
+        width: 50%;
     }
 }
 
