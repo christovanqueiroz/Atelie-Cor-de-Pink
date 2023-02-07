@@ -6,7 +6,7 @@ DESCRIÇÃO
 
 Este projeto foi desenvolvido para unir duas coisas: a necessidade da minha esposa de empreender e ter uma loja virtual, e a minha necessidade de "codar" em um projeto real, do início ao fim.
 
-UTILIZANDO
+FUNCIONALIDADES
 
 É possível acessar o site pelo link http://atelie-cor-de-pink.vercel.app/, acessando o catálogo e adicionando os produtos ao carrinho.
 
